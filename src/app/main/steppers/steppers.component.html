@@ -1,0 +1,106 @@
+<div class="row">
+    <div class="col-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    Horizontal Stepper
+                </mat-card-title>
+            </mat-card-header>
+            <mat-horizontal-stepper #stepper1>
+                <mat-step [stepControl]="firstStepper.firstFormGroup">
+                    <form [formGroup]="firstStepper.firstFormGroup">
+                        <ng-template matStepLabel>Fill out your name</ng-template>
+                        <mat-form-field>
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step [stepControl]="firstStepper.secondFormGroup" label="Fill out your address">
+                    <form [formGroup]="firstStepper.secondFormGroup">
+                        <mat-form-field>
+                            <mat-label>Address</mat-label>
+                            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                                required>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step>
+                    <ng-template matStepLabel>Done</ng-template>
+                    <p>You are now done.</p>
+                    <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button (click)="stepper1.reset()">Reset</button>
+                    </div>
+                </mat-step>
+            </mat-horizontal-stepper>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    Vertical Stepper
+                </mat-card-title>
+            </mat-card-header>
+            <mat-vertical-stepper #stepper2>
+                <mat-step [stepControl]="secondStepper.firstFormGroup">
+                    <form [formGroup]="secondStepper.firstFormGroup">
+                        <ng-template matStepLabel>Fill out your name</ng-template>
+                        <mat-form-field>
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step [stepControl]="secondStepper.secondFormGroup" label="Fill out your address">
+                    <form [formGroup]="secondStepper.secondFormGroup">
+                        <mat-form-field>
+                            <mat-label>Address</mat-label>
+                            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                                required>
+                        </mat-form-field>
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step>
+                    <ng-template matStepLabel>Done</ng-template>
+                    <p>You are now done.</p>
+                    <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button (click)="stepper2.reset()">Reset</button>
+                    </div>
+                </mat-step>
+            </mat-vertical-stepper>
+        </mat-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    Stepper With Error
+                </mat-card-title>
+            </mat-card-header>
+            <app-stepper-with-error></app-stepper-with-error>
+        </mat-card>
+    </div>
+</div>

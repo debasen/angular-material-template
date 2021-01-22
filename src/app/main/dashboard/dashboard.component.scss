@@ -1,0 +1,42 @@
+.tab-icon{
+    margin-right: 5px;
+    font-size: 20px;
+    line-height: 22px;
+}
+
+.add-user{
+    [class*="col-"] {
+        margin-bottom: unset;
+    }
+}
+
+.contact-row{
+    cursor: pointer;
+}
+.contact-row:not(.row-disabled):hover{
+    background: whitesmoke;
+}
+
+.row-disabled{
+    background-color: lightgray;
+    opacity: .6;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+.car-thumbnail{
+    width: 48px;
+    height: 38px;
+    border-radius: 6px;
+}
+
+.progress-cell{
+    text-align: center;
+    font-size: 10px;
+    div{
+        margin-top: 12px;
+    }
+}

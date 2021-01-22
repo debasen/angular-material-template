@@ -1,0 +1,31 @@
+.dark{
+    color: #ffffff;
+}
+
+.primary{
+    background-image : linear-gradient(50deg, #3f51b5,#5d6fd3);
+}
+
+.accent{
+    background-image : linear-gradient(50deg,#ff4081,#ff5e9f);
+}
+
+.warn{
+    background-image : linear-gradient(50deg,#f44336,#ff6254);
+}
+
+.spacer{
+    flex-grow: 1;
+}
+
+.dark-card-header {
+    display: flex;
+    h3 {
+        font-size: 18px;
+    }
+    button{
+        position: relative;
+        top: -5px;
+        right: -8px;
+    }
+}

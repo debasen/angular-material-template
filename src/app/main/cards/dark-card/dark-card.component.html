@@ -1,0 +1,25 @@
+<mat-card class="dark {{color}}">
+    <div class="dark-card-header">
+        <h3>{{title}}</h3>
+        <div class="spacer"></div>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>invert_colors</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="color='primary'">
+              <mat-icon color="primary">lens</mat-icon>
+              <span>Primary</span>
+            </button>
+            <button mat-menu-item (click)="color='accent'">
+                <mat-icon color="accent">lens</mat-icon>
+                <span>Accent</span>
+              </button>
+              <button mat-menu-item (click)="color='warn'">
+                <mat-icon color="warn">lens</mat-icon>
+                <span>Warn</span>
+              </button>
+          </mat-menu>
+        </div>
+    <ng-content>
+    </ng-content>
+</mat-card>

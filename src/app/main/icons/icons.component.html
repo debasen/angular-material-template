@@ -1,0 +1,22 @@
+<div class="text-right">
+    <mat-form-field class="search input_field_width_control">
+        <mat-label>Search</mat-label>
+        <input matInput type="text" [(ngModel)]="searchText" (ngModelChange)="search()" >
+        <mat-icon matSuffix *ngIf="!searchText">search</mat-icon>
+        <button mat-button *ngIf="searchText" matSuffix mat-icon-button aria-label="Clear" (click)="clearSearch()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+</div>
+    <div *ngFor="let iconOb of filteredIcons">
+        <ng-container *ngIf="iconOb.icons.length >0">
+            <h4 class="icon-category">{{iconOb.category}}</h4>
+        <mat-divider class="mb-4"></mat-divider>
+        <div class="row">
+            <div class="col-2 col-lg-1 text-center" *ngFor="let icon of iconOb.icons | slice : 0 : iconCacheSize">
+                <button class="icon-button" [matTooltip]="icon" [cdkCopyToClipboard]="icon" mat-raised-button (click)="iconCopied()"><mat-icon class="icon">{{icon}}</mat-icon></button>
+            </div>
+        </div>
+        </ng-container>
+        
+    </div>

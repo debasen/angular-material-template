@@ -1,0 +1,203 @@
+<div class="row">
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card title="Revenue">
+            <app-dark-line-chart [dataSet]="chart1.data" [labels]="chart1.labels" [min]="0" [max]="50" [stepSize]="10">
+            </app-dark-line-chart>
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card title="Sales" color="warn">
+            <app-dark-bar-chart [dataSet]="chart2.data" [labels]="chart2.labels" [min]="0" [max]="50" [stepSize]="10">
+            </app-dark-bar-chart>
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card title="Inventory" color="accent">
+            <app-dark-line-chart [dataSet]="chart3.data" [labels]="chart3.labels" [min]="0" [max]="50" [stepSize]="10">
+            </app-dark-line-chart>
+        </app-dark-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <mat-tab-group class="mat-elevation-z1" color="primary" mat-stretch-tabs backgroundColor="primary"
+            (selectedIndexChange)="tabChanged($event)">
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <mat-icon class="tab-icon">directions_car</mat-icon>
+                    My Cars
+                </ng-template>
+                <table mat-table [dataSource]="cars" class="w-100">
+
+                    <!-- Checkbox Column -->
+                    <ng-container matColumnDef="img">
+                        <th mat-header-cell *matHeaderCellDef> Thumbnail </th>
+                        <td mat-cell *matCellDef="let row" width="100">
+                            <img [src]="'../../../assets/images/cars/'+ row.img" class="car-thumbnail" />
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="manufacturer">
+                        <th mat-header-cell *matHeaderCellDef> Manufacturer </th>
+                        <td mat-cell *matCellDef="let element"> {{element.manufacturer}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="model">
+                        <th mat-header-cell *matHeaderCellDef> Model </th>
+                        <td mat-cell *matCellDef="let element"> {{element.model}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="bhp">
+                        <th mat-header-cell *matHeaderCellDef> BHP </th>
+                        <td mat-cell *matCellDef="let element" width="150" class="progress-cell">
+                            <div>
+                                <mat-progress-bar mode="determinate" [color]="element.color" [value]="element.bhp/10">
+                                </mat-progress-bar> {{element.bhp}} BHP
+                            </div>
+                        </td>
+                    </ng-container>
+                    <!-- <tr mat-header-row *matHeaderRowDef="carsDisplayedColumns"></tr> -->
+                    <tr mat-row *matRowDef="let row; columns: carsDisplayedColumns;">
+                    </tr>
+                </table>
+
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <mat-icon class="tab-icon">account_circle</mat-icon>
+                    Contacts
+                </ng-template>
+                <table mat-table [dataSource]="users" class="w-100">
+
+                    <!-- Checkbox Column -->
+                    <ng-container matColumnDef="select">
+                        <td mat-cell *matCellDef="let row">
+                            <mat-checkbox (click)="$event.stopPropagation()"
+                                (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)"
+                                [disabled]="row.disabled">
+                            </mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="firstName">
+                        <th mat-header-cell *matHeaderCellDef> First Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="lastName">
+                        <th mat-header-cell *matHeaderCellDef> Last Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="phone">
+                        <th mat-header-cell *matHeaderCellDef> Phone </th>
+                        <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="email">
+                        <th mat-header-cell *matHeaderCellDef> Email </th>
+                        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                    </ng-container>
+
+                    <tr mat-row *matRowDef="let row; columns: editUserDisplayedColumns;" class="contact-row"
+                        [ngClass]="{'row-disabled': row.disabled}"
+                        (click)="row.disabled ? null : selection.toggle(row)">
+                    </tr>
+                </table>
+            </mat-tab>
+            <mat-tab>
+
+                <ng-template mat-tab-label>
+                    <mat-icon class="tab-icon">add</mat-icon>
+                    Add User
+                </ng-template>
+                <mat-card class="add-user">
+                    <form (ngSubmit)="addUser()">
+                        <div class="row">
+                            <div class="col-6">
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>First Name</mat-label>
+                                    <input name="firstName" matInput [(ngModel)]="user.firstName">
+                                    <mat-icon matSuffix>account_box</mat-icon>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-6">
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Last Name</mat-label>
+                                    <input name="lastName" matInput [(ngModel)]="user.lastName">
+                                    <mat-icon matSuffix>account_box</mat-icon>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Gender</mat-label>
+                                    <mat-select name="gender" [(ngModel)]="user.gender">
+                                        <mat-option value="Male">Male</mat-option>
+                                        <mat-option value="Female">Female</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-8">
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Phone Number</mat-label>
+                                    <input name="phone" [(ngModel)]="user.phone" matInput>
+                                    <mat-icon matSuffix>phone</mat-icon>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Email Address</mat-label>
+                                    <input name="email" [(ngModel)]="user.email" matInput>
+                                    <mat-icon matSuffix>email</mat-icon>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <button type="submit" mat-raised-button color="primary">Add</button>
+                        </div>
+                    </form>
+                </mat-card>
+
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+    <div class="col-lg-6">
+        <table mat-table [dataSource]="tableData" class="mat-elevation-z1 w-100">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef> No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef> Weight </th>
+                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div>

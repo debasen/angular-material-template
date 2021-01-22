@@ -1,0 +1,14 @@
+.example-card {
+    max-width: 400px;
+}
+
+.card-header-image {
+    background-image: url('../../../assets/images/egg-thumb.jpg');
+    background-size : cover;
+}
+
+.card-fab{
+    position: relative;
+    top: -46px;
+    float: right;
+}

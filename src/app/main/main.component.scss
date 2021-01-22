@@ -1,0 +1,19 @@
+@import '../../assets/css/variables';
+.full-width{
+  min-height: 100vh;
+}
+
+.main-content{
+  padding: 30px;
+  padding-bottom: 100px;
+}
+
+.drawer-content{
+  position: fixed;
+}
+@media only screen and (max-width : $sm){
+  .main-content{
+    padding: 20px;
+    padding-bottom: 130px;
+  }
+}
