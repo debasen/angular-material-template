@@ -15,7 +15,7 @@ export class IconsComponent implements OnInit, AfterViewInit{
   constructor(private snackBar: MatSnackBar, private httpClient: HttpClient) { }
 
   ngOnInit(): void {
-    this.httpClient.get<Array<any>>('/assets/json/icons.json').subscribe(response=>{
+    this.httpClient.get<Array<any>>('assets/json/icons.json').subscribe(response=>{
       this.icons = response;
       this.filteredIcons = response;
     });
