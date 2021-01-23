@@ -2,6 +2,8 @@
 
 ![Demo Gif](demo/demo.gif)
 
+[Demo Website](https://debasen.github.io/angular-material-template)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
 ## Development server
