@@ -1,4 +1,6 @@
-# AngularDashboard
+# Angular Material Template
+
+![Demo Gif](demo/demo.gif)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 

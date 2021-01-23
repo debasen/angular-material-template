@@ -7,9 +7,9 @@
 .bar {
     display: block;
     height: 2px;
-    width: 28px;
+    width: 24px;
     background: #ffffff;
-    margin: 5px auto;
+    margin: 4px auto;
 }
 
 .con {
@@ -94,7 +94,7 @@
         -ms-transform: rotateZ(-45deg) translate(-6px, -5px);
         -o-transform: rotateZ(-45deg) translate(-6px, -5px);
         transform: rotateZ(-45deg) translate(-6px, -5px);
-        width: 15px;
+        width: 12px;
       }
       .arrow-middle-r {
         -webkit-transform: translateX(0px);
@@ -109,7 +109,7 @@
         -ms-transform: rotateZ(45deg) translate(-6px, 4px);
         -o-transform: rotateZ(45deg) translate(-6px, 4px);
         transform: rotateZ(45deg) translate(-6px, 4px);
-        width: 15px;
+        width: 12px;
       }
       .arrow-top-fall {
         -webkit-transform: translateY(6px);
