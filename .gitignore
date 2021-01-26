@@ -44,7 +44,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-# built files
-/docs/404.html
-/docs/CNAME
