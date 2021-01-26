@@ -9,7 +9,9 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class DashboardComponent implements OnInit {
   color = 'primary';
-
+  animateIcon:boolean=false
+  slideThumbNail:boolean=false
+  hidden=true
   chart1 = {
     data: [10.2, 32.45, 11.2, 23.7, 15.8, 42.5],
     labels: ['A', 'B', 'C', 'D', 'E', 'F']
@@ -77,13 +79,20 @@ export class DashboardComponent implements OnInit {
     this.selection.clear();
     this.users.data[3].disabled = false;
     this.users.data[5].disabled = false;
+    this.animateIcon=false
+    if(index===0){
+       this.slideThumbNail=true
+    }
     if(index === 1){
       //Do It slowly to look cool
       setTimeout(() => {
         this.selection.select(this.users.data[1], this.users.data[3]);
         this.users.data[3].disabled = true;
         this.users.data[5].disabled = true;
-      }, 500);
+      }, 500); 
+    }
+    if(index === 2){
+      this.animateIcon=true
     }
   }
 }
