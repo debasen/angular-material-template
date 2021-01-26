@@ -2,6 +2,7 @@
     margin-right: 5px;
     font-size: 20px;
     line-height: 22px;
+    visibility:hidden;
 }
 
 .add-user{
@@ -44,3 +45,42 @@
 table.responsive{
     min-width: 500px;
 }
+.push{
+    animation-delay: 1s;
+    animation: fadeIn .8s;
+    // animation-fill-mode: forwards;
+}
+@keyframes fadeIn {
+    from{transform:scale(0), }
+    80%{transform:scale(1.2)}
+    to{transform:scale(1)}
+}
+
+@-webkit-keyframes fadeIn {
+    from{-webkit-transform:scale(0)}
+    80%{-webkit-transform:scale(1.5)}
+    to{-webkit-transform:scale(1)}
+}
+.slide {
+    animation-delay: .3s;
+    animation-duration: 0.3s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: -80%;
+    //   width: 100%;
+    }
+  
+    to {
+      margin-left: 0%;
+    //   width: 100%;
+    }
+  }
+//   :host ::ng-deep {
+//     .updating-animation.mat-progress-bar .mat-progress-bar-fill {
+//       transition: transform 1000ms linear;
+//     }
+//   }
+  
