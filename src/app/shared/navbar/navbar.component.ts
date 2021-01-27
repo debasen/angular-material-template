@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NavigationService } from '../navigation.service';
 import { MENU_ITEMS } from '../sidebar/sidebar.component';
 
@@ -12,7 +13,7 @@ export class NavbarComponent implements OnInit {
   private titleList: any[];
   sticky : boolean = false;
 
-  constructor(private location: Location, private navService: NavigationService) { }
+  constructor(private location: Location, private navService: NavigationService, private router : Router) { }
 
   ngOnInit(): void {
     this.titleList = MENU_ITEMS.map(item=>item);
@@ -40,5 +41,9 @@ export class NavbarComponent implements OnInit {
 
   toggleSidebar(){
     this.navService.toggleSidebar();
+  }
+
+  logout(){
+    this.router.navigate(['pages','login']);
   }
 }
