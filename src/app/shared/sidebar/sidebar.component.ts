@@ -6,8 +6,9 @@ import { NavigationService } from '../navigation.service';
 export const MENU_ITEMS: Array<SidebarItem> = [
   { icon: 'home', title: 'Dashboard', url: '/main/dashboard' },
   {
-    icon: 'assignment icon', title: 'Pages', subMenu: [
+    icon: 'collections_bookmark', title: 'Pages', subMenu: [
       { icon: 'account_circle', title: 'Login', url: '/pages/login' },
+      { icon: 'chrome_reader_mode', title : 'Register', url: '/pages/register'}
     ]
   },
   {

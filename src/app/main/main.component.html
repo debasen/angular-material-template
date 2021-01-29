@@ -1,4 +1,4 @@
-    <mat-drawer-container (backdropClick)="onBackdropClick()" class="full-width">
+    <mat-drawer-container (backdropClick)="onBackdropClick()" class="full-width" autosize>
         <mat-drawer class="drawer-content" [mode]="mode" [autoFocus]='false' [opened]="isOpen?'':null">
             <app-sidebar (menuSelect)="onMenuSelect()"></app-sidebar>
         </mat-drawer>

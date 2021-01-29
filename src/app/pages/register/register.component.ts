@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  passwordHide = true;
+  cnfPasswordHide = true;
+  fieldAppearance = 'fill';
 
   constructor() { }
 
