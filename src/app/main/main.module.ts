@@ -31,10 +31,12 @@ import { StepperWithErrorComponent } from './steppers/stepper-with-error/stepper
 import { DarkLineChartComponent } from './charts/dark-line-chart/dark-line-chart.component';
 import { DarkCardComponent } from './cards/dark-card/dark-card.component';
 import { DarkBarChartComponent } from './charts/dark-bar-chart/dark-bar-chart.component';
-
+import { IotDashboardComponent } from './iot-dashboard/iot-dashboard.component';
+import {ColorPickerComponent} from './iot-dashboard/color_picker.component';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 @NgModule({
-  declarations: [DashboardComponent, MainComponent, FormsComponent, BasicFormComponent, AdvancedFormComponent, CardsComponent, IconsComponent, MatSuccessComponent, ButtonsComponent, TablesComponent,ChartsComponent, LineChartComponent, BarChartComponent, PieChartComponent, DoughnutChartComponent, RadarChartComponent, PolarAreaChartComponent, BubbleChartComponent, ScatterChartComponent, SteppersComponent, StepperWithErrorComponent, DarkLineChartComponent, DarkCardComponent, DarkBarChartComponent],
+  declarations: [DashboardComponent, MainComponent, FormsComponent, BasicFormComponent, AdvancedFormComponent, CardsComponent, IconsComponent, MatSuccessComponent, ButtonsComponent, TablesComponent,ChartsComponent, LineChartComponent, BarChartComponent, PieChartComponent, DoughnutChartComponent, RadarChartComponent, PolarAreaChartComponent, BubbleChartComponent, ScatterChartComponent, SteppersComponent, StepperWithErrorComponent, DarkLineChartComponent, DarkCardComponent, DarkBarChartComponent, IotDashboardComponent,ColorPickerComponent],
   imports: [
     CommonModule,
     MainRoutingModule,
@@ -44,7 +46,8 @@ import { DarkBarChartComponent } from './charts/dark-bar-chart/dark-bar-chart.co
     FormsModule,
     ReactiveFormsModule,
     ChartsModule,
-    HttpClientModule
+    HttpClientModule,
+    ColorPickerModule
   ]
 })
 export class MainModule { }

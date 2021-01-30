@@ -1,0 +1,10 @@
+<span [style.background]="arrayColors[selectedColor]"
+      [cpToggle]="true"
+      [cpDialogDisplay]="'inline'"
+      [cpCancelButton]="false"
+      [cpOKButton]="true"
+      [(colorPicker)]="arrayColors[selectedColor]" (colorPickerSelect)="colorSelected($event)"></span>
+<!-- <div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+   <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button> 
+</div> -->

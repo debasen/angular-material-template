@@ -8,6 +8,7 @@ import { AdvancedFormComponent } from './forms/advanced-form/advanced-form.compo
 import { BasicFormComponent } from './forms/basic-form/basic-form.component';
 import { FormsComponent } from './forms/forms.component';
 import { IconsComponent } from './icons/icons.component';
+import { IotDashboardComponent } from './iot-dashboard/iot-dashboard.component';
 import { MainComponent } from './main.component';
 import { SteppersComponent } from './steppers/steppers.component';
 import { TablesComponent } from './tables/tables.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
       { path: 'tables', component: TablesComponent },
       { path: 'charts', component: ChartsComponent },
       { path: 'steppers', component: SteppersComponent },
+      {path:'iot-dashboard',component:IotDashboardComponent}
     ]
   },
 ];

@@ -5,6 +5,7 @@ import { NavigationService } from '../navigation.service';
 
 export const MENU_ITEMS: Array<SidebarItem> = [
   { icon: 'home', title: 'Dashboard', url: '/main/dashboard' },
+  { icon: 'smartphone', title: 'Iot-Dashboard', url: '/main/iot-dashboard' },
   {
     icon: 'collections_bookmark', title: 'Pages', subMenu: [
       { icon: 'account_circle', title: 'Login', url: '/pages/login' },

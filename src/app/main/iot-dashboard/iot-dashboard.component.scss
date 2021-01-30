@@ -1,0 +1,54 @@
+@import '../../../assets/css/variables';
+.mat-body-padding {
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // margin: 16px;
+    padding: 16px;
+    // border-radius: 8px;
+  }
+  
+  .example-small-box {
+     height: 100px;
+    display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 16px;
+     width: 100px;
+     border-radius: 100px;
+  }
+.btn_bkgnd_color.primary{
+    background-image: $primaryLight;
+  }
+  .btn_bkgnd_color.accent{
+    background-image: $accentLight;
+  }
+  .btn_bkgnd_color.warn{
+    background-image: $warnLight;
+  }
+  
+  .btn_bkgnd_color_off{
+    opacity: 0.6;
+  }
+  .palette{
+    font-size: 22px;
+  }
+  .btn_palette{
+    background-image: url("../../../assets/images/rainbow-color-gradient-mesh-background-trendy-vector-20601257.jpg");
+    background-size: contain;
+     opacity: 0.8;
+     border-radius:53px;
+     min-width:30px;
+     padding-left: 6px;
+     padding-right: 6px;
+     padding-top:0px ;
+     padding-bottom: 0px;
+     margin-left: 6px;
+  }
+  .label_margin{
+  margin-left: 32px;
+  }
+//   .example-large-box {
+//     height: 300px;
+//     width: 300px;
+//   }

@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-lg-6">
+        <mat-tab-group dynamicHeight color="primary" class="mat-elevation-z1" mat-stretch-tabs backgroundColor="primary">
+        <mat-tab *ngFor="let room of home.rooms" label="{{room}}">
+            <div class="mat-body-padding">
+            <div class="row">
+                <div class="col-lg-4"  *ngFor="let feat of home.features">
+                    <button class="example-small-box" mat-raised-button [ngStyle]="{'background-image': feat.on ? 'linear-gradient(50deg,'+feat.color+',#ffffff)' : 'unset'}" [ngClass]="{'btn_bkgnd_color_off' : !feat.on}"  (click)="feat.on = !feat.on">
+                       <mat-icon fontSet="material-icons-outlined" style="font-size: 66px;margin-left: -40px;
+                       margin-bottom: 40px;">{{feat.icon}}</mat-icon>
+                    </button>
+                    <mat-label class="label_margin">{{feat.name}}<button mat-raised-button class="btn_palette" (click)="openDialog(feat)"><mat-icon fontSet="material-icons-outlined" class="palette">palette</mat-icon></button></mat-label>    
+            </div>  
+        </div>
+    </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+</div> 
