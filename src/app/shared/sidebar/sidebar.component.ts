@@ -5,10 +5,17 @@ import { NavigationService } from '../navigation.service';
 
 export const MENU_ITEMS: Array<SidebarItem> = [
   { icon: 'home', title: 'Dashboard', url: '/main/dashboard' },
+  { icon: 'smartphone', title: 'Iot-Dashboard', url: '/main/iot-dashboard' },
   {
-    icon: 'assignment icon', title: 'Forms', subMenu: [
-      { icon: 'assignment icon', title: 'Basic Form', url: '/main/forms/basic-form' },
-      { icon: 'assignment icon', title: 'Advanced Form', url: '/main/forms/advanced-form' }
+    icon: 'collections_bookmark', title: 'Pages', subMenu: [
+      { icon: 'account_circle', title: 'Login', url: '/pages/login' },
+      { icon: 'chrome_reader_mode', title : 'Register', url: '/pages/register'}
+    ]
+  },
+  {
+    icon: 'description', title: 'Forms', subMenu: [
+      { icon: 'description', title: 'Basic Form', url: '/main/forms/basic-form' },
+      { icon: 'description', title: 'Advanced Form', url: '/main/forms/advanced-form' }
     ]
   },
   { icon: 'star', title: 'Icons', url: '/main/icons' },
