@@ -1,9 +1,50 @@
 # Angular Material Template
 
-![Demo Gif](demo/demo.gif)
+## [Demo](https://amttemplate.in)
+[![Demo Gif](demo/demo.gif)](https://amttemplate.in)
 
-[Demo Website](https://debasen.github.io/angular-material-template)
+## Application Features
+### Menu Layout
+- Sidebar, Hambarger menu
+- Navbar, Dropdown profile settings, logout
+### Dashboard
+- Customized Color Graph Cards
+- Tabs
+- Table with custom HTML and Progress Bar
+### IOT Dashboard
+- Room wise tab
+- Switches with color config
+- AC Control
+- Power consumption
+### Components
+- Forms
+- Cards
+- Tables
+- Icons
+- Steppers
+- Charts
+- Collapse
+### Pages
+- Login
+- Register
 
+## Technical & Design Features
+### Responsive
+Fit to be used in Desktop, Tab and mobile devices.
+### Cross Platform
+Integrated with Cordova and ready to be compiled as android app (apk).
+#### Steps
+1. Checkout the [android branch](https://github.com/debasen/angular-material-template/tree/android)
+2. Install Cordova : `npm install -g cordova`
+3. Install [Java (JDK)](https://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html#A1097272)
+4. Install [Android Studio and SDK](https://developer.android.com/studio)
+5. Connect your android device in debug mode, or start emulator
+6. Run the app, `cordova platform add android`.
+7. [See More...](https://medium.com/analytics-vidhya/create-a-mobile-app-using-your-existing-angular-web-project-using-cordova-9c10d377d527)
+### Material UI
+UI is designed with latest [Angular Material](https://material.angular.io/), for a modern App like UI.
+
+## Angular CLI
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
 ## Development server
