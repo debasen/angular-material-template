@@ -34,9 +34,11 @@ import { DarkBarChartComponent } from './charts/dark-bar-chart/dark-bar-chart.co
 import { IotDashboardComponent } from './iot-dashboard/iot-dashboard.component';
 import {ColorPickerComponent} from './iot-dashboard/color_picker.component';
 import { ColorPickerModule } from 'ngx-color-picker';
+import { ContactsComponent } from './contacts/contacts.component';
+import { AdvancedCardsComponent } from './cards/advanced-cards/advanced-cards.component';
 
 @NgModule({
-  declarations: [DashboardComponent, MainComponent, FormsComponent, BasicFormComponent, AdvancedFormComponent, CardsComponent, IconsComponent, MatSuccessComponent, ButtonsComponent, TablesComponent,ChartsComponent, LineChartComponent, BarChartComponent, PieChartComponent, DoughnutChartComponent, RadarChartComponent, PolarAreaChartComponent, BubbleChartComponent, ScatterChartComponent, SteppersComponent, StepperWithErrorComponent, DarkLineChartComponent, DarkCardComponent, DarkBarChartComponent, IotDashboardComponent,ColorPickerComponent],
+  declarations: [DashboardComponent, MainComponent, FormsComponent, BasicFormComponent, AdvancedFormComponent, CardsComponent, IconsComponent, MatSuccessComponent, ButtonsComponent, TablesComponent,ChartsComponent, LineChartComponent, BarChartComponent, PieChartComponent, DoughnutChartComponent, RadarChartComponent, PolarAreaChartComponent, BubbleChartComponent, ScatterChartComponent, SteppersComponent, StepperWithErrorComponent, DarkLineChartComponent, DarkCardComponent, DarkBarChartComponent, IotDashboardComponent,ColorPickerComponent, ContactsComponent, AdvancedCardsComponent],
   imports: [
     CommonModule,
     MainRoutingModule,

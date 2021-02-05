@@ -6,11 +6,12 @@ import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HamburgerIconComponent } from './hamburger-icon/hamburger-icon.component';
 import { FooterComponent } from './footer/footer.component';
+import { LetterIconComponent } from './letter-icon/letter-icon.component';
 
 
 
 @NgModule({
-  declarations: [SidebarComponent, NavbarComponent, HamburgerIconComponent, FooterComponent],
+  declarations: [SidebarComponent, NavbarComponent, HamburgerIconComponent, FooterComponent, LetterIconComponent],
   imports: [
     CommonModule,
     AngularMaterialModule,
@@ -20,7 +21,8 @@ import { FooterComponent } from './footer/footer.component';
     SidebarComponent,
     NavbarComponent,
     HamburgerIconComponent,
-    FooterComponent
+    FooterComponent,
+    LetterIconComponent
   ]
 })
 export class SharedModule { }

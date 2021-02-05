@@ -14,6 +14,7 @@ export class DarkLineChartComponent implements OnInit {
 @Input() min : number = 0;
 @Input() max : number;
 @Input() stepSize : number;
+@Input() color : 'black';
 
   public lineChartData: ChartDataSets[] = [
   ];
@@ -21,12 +22,7 @@ export class DarkLineChartComponent implements OnInit {
   public lineChartOptions: (ChartOptions) = {
     responsive: true,
   };
-  public lineChartColors: Color[] = [
-    {
-      borderColor: 'black',
-      backgroundColor: 'rgba(255,0,0,0.3)',
-    },
-  ];
+  public lineChartColors: Color[];
   public lineChartLegend = true;
   public lineChartType = 'line';
   public lineChartPlugins = [];
@@ -35,7 +31,7 @@ export class DarkLineChartComponent implements OnInit {
 
   ngOnInit() {
     this.lineChartData = [
-      { data: this.dataSet, label: 'Series A', lineTension:0,borderColor: 'rgba(255,255,255,.8)' },
+      { data: this.dataSet, label: 'Series A', lineTension:0,borderColor: this.color === 'black' ? 'rgba(0,0,0,.8)' : 'rgba(255,255,255,.8)' },
     ];
     this.lineChartLabels = this.labels;
 
@@ -49,25 +45,25 @@ export class DarkLineChartComponent implements OnInit {
       scales : {
         yAxes: [{
             ticks: {
-                fontColor: "white",
+                fontColor: this.color === 'black' ? 'black' : "white",
                 min: this.min,
                 max: this.max,
                 stepSize: this.stepSize
             },
             gridLines: {
-              color: 'rgba(255,255,255,.2)',
+              color: this.color === 'black' ? 'rgba(0,0,0,.2)' : 'rgba(255,255,255,.2)',
               borderDash: [4, 2],
-              zeroLineColor : 'rgba(255,255,255,.2)'
+              zeroLineColor : this.color === 'black' ? 'rgba(0,0,0,.2)' : 'rgba(255,255,255,.2)'
             }
         }],
         xAxes: [{
             ticks: {
-                fontColor: "white",
+                fontColor: this.color === 'black' ? 'black' : "white",
             },
             gridLines: {
-              color: 'rgba(255,255,255,.2)',
+              color: this.color === 'black' ? 'rgba(0,0,0,.2)' : 'rgba(255,255,255,.2)',
               borderDash: [4, 2],
-              zeroLineColor : 'rgba(255,255,255,.2)'
+              zeroLineColor : this.color === 'black' ? 'rgba(0,0,0,.2)' : 'rgba(255,255,255,.2)'
             }
         }]
     }
@@ -75,8 +71,8 @@ export class DarkLineChartComponent implements OnInit {
 
     this.lineChartColors = [
       {
-        borderColor: 'rgba(255,255,255,.8)',
-        backgroundColor: 'rgba(255,255,0,0)',
+        borderColor: this.color === 'black' ? 'rgba(0,0,0,.8)' : 'rgba(255,255,255,.8)',
+        backgroundColor: this.color === 'black' ? 'rgba(0,0,255,0)' : 'rgba(255,255,255,0)',
       },
     ];
   }

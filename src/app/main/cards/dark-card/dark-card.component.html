@@ -1,25 +1,38 @@
-<mat-card class="dark {{color}}">
-    <div class="dark-card-header">
+  <mat-card class="dark {{mode === 'full' ? color : null}} {{mode}}">
+    <div class="dark-card-header {{mode === 'header' ? color : null}}" [ngClass]="{'dark' : mode === 'header', 'raised': header === 'raised', 'mat-elevation-z5': header === 'raised'}">
+      <div #customHeader><ng-content select="[customHeader]"></ng-content></div>
+      <ng-container *ngIf="!customHeader.hasChildNodes()">
+        <app-letter-icon [title]="title" *ngIf="icon === 'letter'"></app-letter-icon>
+        <mat-icon *ngIf="icon && icon!=='letter'">{{icon}}</mat-icon>
         <h3>{{title}}</h3>
         <div class="spacer"></div>
-        <button mat-icon-button [matMenuTriggerFor]="menu">
-            <mat-icon>invert_colors</mat-icon>
+        <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="picker">
+          <mat-icon>invert_colors</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="color='primary'">
-              <mat-icon color="primary">lens</mat-icon>
-              <span>Primary</span>
-            </button>
-            <button mat-menu-item (click)="color='accent'">
-                <mat-icon color="accent">lens</mat-icon>
-                <span>Accent</span>
-              </button>
-              <button mat-menu-item (click)="color='warn'">
-                <mat-icon color="warn">lens</mat-icon>
-                <span>Warn</span>
-              </button>
-          </mat-menu>
-        </div>
+          <button mat-menu-item (click)="color='primary'">
+            <mat-icon color="primary">lens</mat-icon>
+            <span>Primary</span>
+          </button>
+          <button mat-menu-item (click)="color='accent'">
+            <mat-icon color="accent">lens</mat-icon>
+            <span>Accent</span>
+          </button>
+          <button mat-menu-item (click)="color='warn'">
+            <mat-icon color="warn">lens</mat-icon>
+            <span>Warn</span>
+          </button>
+        </mat-menu>
+      </ng-container>
+      
+    </div>
+    <div [ngClass]="{'body' : mode === 'header'}">
     <ng-content>
     </ng-content>
-</mat-card>
+  <div class="footer text-{{footerAlign}}" [hidden]="!footer.hasChildNodes()">
+    <div #footer>
+      <ng-content select="[footer]"></ng-content>
+    </div>
+  </div>
+</div>
+  </mat-card>

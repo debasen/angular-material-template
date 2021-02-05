@@ -20,12 +20,54 @@
 
 .dark-card-header {
     display: flex;
+    padding: 16px;
     h3 {
         font-size: 18px;
+        margin: 0px;
     }
     button{
         position: relative;
-        top: -5px;
-        right: -8px;
+    right: -8px;
+    line-height: 0px;
+    height: unset;
+    width: unset;
     }
+    app-letter-icon,mat-icon{
+        margin-right: 8px;
+    }
+}
+
+.full {
+    .dark-card-header.raised {
+        padding: 16px;
+        margin-bottom: 12px;
+    }
+    .dark-card-header {
+        padding: 0px 0px 16px;
+    }
+
+}
+
+.dark-card-header.dark {
+    padding: 16px;
+    border-radius: 4px 4px 0px 0px;
+   
+}
+.dark-card-header.dark.raised {
+    margin : 0px -6px;
+    padding: 18px;
+}
+
+
+.footer {
+    padding: 16px 0px 0px;
+}
+
+.header{
+    padding: 0px
+}
+
+.body{
+    padding: 16px;
+    color: black
 }
