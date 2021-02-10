@@ -15,6 +15,7 @@ export class DarkLineChartComponent implements OnInit {
 @Input() max : number;
 @Input() stepSize : number;
 @Input() color : 'black';
+@Input() background : boolean = false;
 
   public lineChartData: ChartDataSets[] = [
   ];
@@ -68,11 +69,11 @@ export class DarkLineChartComponent implements OnInit {
         }]
     }
     };
-
+    let alpha = this.background ? .2 : 0;
     this.lineChartColors = [
       {
         borderColor: this.color === 'black' ? 'rgba(0,0,0,.8)' : 'rgba(255,255,255,.8)',
-        backgroundColor: this.color === 'black' ? 'rgba(0,0,255,0)' : 'rgba(255,255,255,0)',
+        backgroundColor: this.color === 'black' ? `rgba(0,0,255,${alpha})` : `rgba(255,255,255,${alpha})`,
       },
     ];
   }

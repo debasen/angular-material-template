@@ -36,9 +36,10 @@ import {ColorPickerComponent} from './iot-dashboard/color_picker.component';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { ContactsComponent } from './contacts/contacts.component';
 import { AdvancedCardsComponent } from './cards/advanced-cards/advanced-cards.component';
+import { AdvancedButtonsComponent } from './buttons/advanced-buttons/advanced-buttons.component';
 
 @NgModule({
-  declarations: [DashboardComponent, MainComponent, FormsComponent, BasicFormComponent, AdvancedFormComponent, CardsComponent, IconsComponent, MatSuccessComponent, ButtonsComponent, TablesComponent,ChartsComponent, LineChartComponent, BarChartComponent, PieChartComponent, DoughnutChartComponent, RadarChartComponent, PolarAreaChartComponent, BubbleChartComponent, ScatterChartComponent, SteppersComponent, StepperWithErrorComponent, DarkLineChartComponent, DarkCardComponent, DarkBarChartComponent, IotDashboardComponent,ColorPickerComponent, ContactsComponent, AdvancedCardsComponent],
+  declarations: [DashboardComponent, MainComponent, FormsComponent, BasicFormComponent, AdvancedFormComponent, CardsComponent, IconsComponent, MatSuccessComponent, ButtonsComponent, TablesComponent,ChartsComponent, LineChartComponent, BarChartComponent, PieChartComponent, DoughnutChartComponent, RadarChartComponent, PolarAreaChartComponent, BubbleChartComponent, ScatterChartComponent, SteppersComponent, StepperWithErrorComponent, DarkLineChartComponent, DarkCardComponent, DarkBarChartComponent, IotDashboardComponent,ColorPickerComponent, ContactsComponent, AdvancedCardsComponent, AdvancedButtonsComponent],
   imports: [
     CommonModule,
     MainRoutingModule,

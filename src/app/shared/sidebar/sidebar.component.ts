@@ -24,7 +24,11 @@ export const MENU_ITEMS: Array<SidebarItem> = [
     { title: 'Basic Cards', url: '/main/cards/basic-cards' },
     { title: 'Advanced Cards', url: '/main/cards/advanced-cards' },
   ] },
-  { icon: 'play_circle_outline', title: 'Buttons', url: '/main/buttons' },
+  { icon: 'play_circle_outline', title: 'Buttons', subMenu:[
+    { title: 'Basic Buttons', url: '/main/buttons' },
+    { title: 'Advanced Buttons', url: '/main/advanced-buttons' },
+  ]
+ },
   { icon: 'view_module', title: 'Tables', url: '/main/tables' },
   { icon: 'insert_chart_outlined', title: 'Charts', url: '/main/charts' },
   { icon: 'playlist_add_check', title: 'Steppers', url: '/main/steppers' },

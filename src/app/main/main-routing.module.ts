@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdvancedButtonsComponent } from './buttons/advanced-buttons/advanced-buttons.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { AdvancedCardsComponent } from './cards/advanced-cards/advanced-cards.component';
 import { CardsComponent } from './cards/cards.component';
@@ -36,6 +37,7 @@ const routes: Routes = [
       ]},
       { path: 'icons', component: IconsComponent },
       { path: 'buttons', component: ButtonsComponent },
+      { path: 'advanced-buttons', component: AdvancedButtonsComponent },
       { path: 'tables', component: TablesComponent },
       { path: 'charts', component: ChartsComponent },
       { path: 'steppers', component: SteppersComponent },

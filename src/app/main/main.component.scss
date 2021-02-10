@@ -10,6 +10,7 @@
 
 .drawer-content{
   position: fixed;
+  width: 250px;
 }
 @media only screen and (max-width : $sm){
   .main-content{
