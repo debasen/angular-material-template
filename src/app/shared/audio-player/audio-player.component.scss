@@ -1,0 +1,269 @@
+// figure {
+//     margin: 0;
+// }
+.example-small-box {
+    height: 100px;
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    width: 100px;
+    border-radius: 100px;
+   
+ }
+
+ .image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+ }
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+.song_name {
+    width:250px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: floatText 5s infinite linear;
+    padding-left: 100%; /*Initial offset*/
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  padding-left: 40px;
+  padding-top: 13px;
+  }
+  
+  .song_name:hover {
+    animation-play-state: paused;
+    // overflow: visible;
+  }
+  
+  @keyframes floatText {
+    to {
+      transform: translateX(-18%);
+    }
+  }
+  ::ng-deep.mat-tooltip{
+    width: fit-content;
+    height: fit-content;
+  }
+  .scroll-left {
+    width: 250px;
+    height:35px;
+    overflow: hidden;
+    position: relative;
+    // background: yellow;
+    // color: orange;
+    // border: 1px solid orange;
+  }
+  
+  .scroll-left span {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    font-size:26px;
+    // line-height: 26px;
+    margin: 0;
+    // text-align: center;
+    white-space:nowrap;
+    // padding-left: 40px;
+    // padding-top: 13px;
+    // padding-left: 100%;
+    /* Starting position */
+    
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    /* Apply animation to this element */
+    
+    -moz-animation: scroll-left 1s linear infinite;
+    -webkit-animation: scroll-left 1s linear infinite;
+    animation: scroll-left 10s linear infinite;
+  }
+  /* Move it (define the animation) */
+  
+  @-moz-keyframes scroll-left {
+    0% {
+      -moz-transform: translateX(100%);
+    }
+    100% {
+      -moz-transform: translateX(-100%);
+    }
+  }
+  
+  @-webkit-keyframes scroll-left {
+    0% {
+      -webkit-transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      -moz-transform: translateX(100%);
+      /* Browser bug fix */
+      
+      -webkit-transform: translateX(100%);
+      /* Browser bug fix */
+      
+      transform: translateX(100%);
+    }
+    100% {
+      -moz-transform: translateX(-100%);
+      /* Browser bug fix */
+      
+      -webkit-transform: translateX(-100%);
+      /* Browser bug fix */
+      
+      transform: translateX(-100%);
+    }
+  }
+  // .song_name:hover span {
+  //   position:relative;
+  //   background-color: white;
+  //   box-shadow: 0 0 4px 0 black;
+  //   border-radius: 10px;
+  //   // top:100px
+  // }
+
+
+  .btn_palette{
+    // background-image: url("../../../assets/images/rainbow-color-gradient-mesh-background-trendy-vector-20601257.jpg");
+    // background-size: contain;
+    //  opacity: 0.8;
+     border-radius:14px;
+     min-width:30px;
+     padding-left: 6px;
+     padding-right: 6px;
+     padding-top:0px ;
+     padding-bottom: 0px;
+     margin-left: 6px;
+     transition: .5s ease;
+  }
+  .btn_palette.showVolSlider {
+    width:210px;
+    border-radius: 14px;
+    padding: 0px;
+    transition:all 0.4s ease 0s;
+    z-index: 100;
+    background-color:rgba(229,229,229,0.9);
+    transition: .5s ease;
+ }
+ ._mute_btn{
+  opacity: 0.5;
+ }
+ .hideNshow{
+ visibility: hidden;
+ }
+//  @keyframes reveal {
+//   from {
+//     transform: translateX(200px);
+//   }
+//   to {
+//     transform: translateX(0px);
+//     opacity: 1;
+//   }
+// }
+//   .artist_name {
+//     display: inline-block;
+//     white-space: nowrap;
+//     animation: floatTextnStop 4s linear;
+//     padding-left: 10%; /*Initial offset*/
+//   }
+  
+//   .artist_name:hover {
+//     animation-play-state: paused;
+//   }
+//   @keyframes floatTextnStop {
+//     to {
+//       transform: translateX(-50%);
+//     }
+    
+//   }
+  ////delete hobe////
+  example-h2 {
+    margin: 10px;
+  }
+  
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 0 10px;
+  }
+  // ::ng-deep.mat-slider.mat-slider-horizontal .mat-slider-wrapper {
+  //   top: 18px;
+  // }
+  // ::ng-deep.mat-slider.mat-slider-horizontal .mat-slider-track-wrapper {
+  //   height: 12px;
+  //   border-radius: 10px
+  // }
+  // ::ng-deep.mat-slider.mat-slider-horizontal .mat-slider-track-background,
+  // ::ng-deep.mat-slider.mat-slider-horizontal .mat-slider-track-fill {
+  //   height: 100%;
+  // }
+  // ::ng-deep.mat-slider.mat-slider-horizontal .mat-slider-track-fill {
+  //   background-color: blue;
+  // }
+  // ::ng-deep.mat-accent .mat-slider-thumb {
+  //   height: 30px;
+  //   width: 30px;
+  //   background-color: white;
+  //   border: solid 2px gray;
+  //   bottom: -20px;
+  //   right: -20px;
+  // }
+  // ::ng-deep.mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
+  //   background-color: white;
+  // }
+  
+  // mat-slider {
+  //   width: 279px;
+  // }
+// .album_name_text{
+//     text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+// }
+// @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+// @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+// @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+// audio { 
+//     width: 600px; 
+//     box-shadow: 5px 5px 20px rgba(0,0, 0, 0.4);
+//     border-radius: 90px;
+//     transform: scale(1.05);
+//   }
+
+.play-icon{
+  font-size: 66px;
+  margin-left: -44px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  color: white;
+  backdrop-filter: blur(0.75);
+  text-shadow:2px 4px 6px black; 
+  margin-top: 11px;
+}
+.play_icon_rotate{
+  height: 100px;
+  align-items: center;
+  margin: -38px;
+  width: 100px;
+  border-radius: 100px;
+  margin-left: -58px;
+}
