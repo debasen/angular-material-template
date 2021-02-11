@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class LetterIconComponent implements OnInit {
   @Input() title : String;
+  @Input() size : 'small' | 'normal' | 'large' = 'normal';
   abbr : string;
 
   constructor() { }

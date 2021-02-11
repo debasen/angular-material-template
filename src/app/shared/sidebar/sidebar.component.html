@@ -19,7 +19,7 @@
                     <a [routerLink]="subMenuItem.url" [disabled]="subMenuItem.disabled" routerLinkActive="active-menu"
                         mat-button (click)="menuSelected()">
                         <mat-icon *ngIf="subMenuItem.icon">{{subMenuItem.icon}}</mat-icon>
-                        <app-letter-icon *ngIf="!subMenuItem.icon" [title]="subMenuItem.title">{{subMenuItem.icon}}
+                        <app-letter-icon size="small" *ngIf="!subMenuItem.icon" [title]="subMenuItem.title">{{subMenuItem.icon}}
                         </app-letter-icon>
                         {{subMenuItem.title}}
                     </a>
