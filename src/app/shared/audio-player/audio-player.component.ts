@@ -55,19 +55,19 @@ export class AudioPlayerComponent implements OnInit {
   
   audioData=[{
     albumArt:'assets/images/di7y2l814yk11.jpg',
-    audio:'assets/audio/Blear Moon - Afterworlds.mp3',
+    audio:'assets/audio/bensound-cute.mp3',
     audio_name:'Afterworlds',
     artist:'Blear Moon'
   },
   {
     albumArt:'assets/images/coltrane.png',
-    audio:'assets/audio/Daniel Birch - Broken Skin Overflowing.mp3',
+    audio:'assets/audio/bensound-acousticbreeze.mp3',
     audio_name:'Broken Skin Overflowing',
     artist:'Daniel Birch'
   },
   {
     albumArt:'assets/images/In-Rainbows-v4.png',
-    audio:'assets/audio/Lobo Loco - Lockdown City (ID 1542).mp3',
+    audio:'assets/audio/bensound-hey.mp3',
     audio_name:'Lockdown City (ID 1542)',
     artist:'Lobo Loco'
   }];
@@ -120,9 +120,7 @@ export class AudioPlayerComponent implements OnInit {
     this.playSong.volume=this.volume/100
   }
   currentTime(value){
-    console.log("v",value)
-    this.currentTimePlayedSong=value
-    return (this.currentTimePlayedSong/100)
+    return this.playSong ? this.playSong.duration*value/100 : 0;
   }
   // formatLabel(value) {
   //   // console.log(this.currentTimePlayedSong)

@@ -20,17 +20,14 @@
         </div>
         <div class="col-8">
           <div>
-            <h2 class="m-0 scroll-left">
-              <span >
-                {{currentSongPlaying.audio_name}}
-              </span>
-             </h2>
+            <marquee class="m-0 scroll-left" behavior="scroll" direction="left">{{currentSongPlaying.audio_name}}</marquee>
           </div>
           <div>
             <h4 class="m-0 artist_name" style=" opacity:0.8">{{currentSongPlaying.artist}}</h4>
           </div>
           <br>
           <div style="height: 28px;">
+            <audio [src]="currentSongPlaying.audio" #audioPlayer (timeupdate)="songPos = playSong.currentTime/playSong.duration * 100"></audio>
             <mat-progress-bar (mouseenter)="slide = true; sliderPos = songPos"
              *ngIf="!slide" color="primary" mode="determinate" [value]="songPos" >
             </mat-progress-bar>
@@ -51,7 +48,7 @@
               step=1
               (mouseleave)="slide = false"
               ></mat-slider>
-              <audio [src]="currentSongPlaying.audio" #audioPlayer (timeupdate)="songPos = playSong.currentTime/playSong.duration * 100"></audio>
+              
           </div>
           <!-- <br> -->
           <div>
