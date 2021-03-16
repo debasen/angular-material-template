@@ -37,6 +37,14 @@ import { ColorPickerModule } from 'ngx-color-picker';
 import { ContactsComponent } from './contacts/contacts.component';
 import { AdvancedCardsComponent } from './cards/advanced-cards/advanced-cards.component';
 import { AdvancedButtonsComponent } from './buttons/advanced-buttons/advanced-buttons.component';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
+
 
 @NgModule({
   declarations: [DashboardComponent, MainComponent, FormsComponent, BasicFormComponent, AdvancedFormComponent, CardsComponent, IconsComponent, MatSuccessComponent, ButtonsComponent, TablesComponent,ChartsComponent, LineChartComponent, BarChartComponent, PieChartComponent, DoughnutChartComponent, RadarChartComponent, PolarAreaChartComponent, BubbleChartComponent, ScatterChartComponent, SteppersComponent, StepperWithErrorComponent, DarkLineChartComponent, DarkCardComponent, DarkBarChartComponent, IotDashboardComponent,ColorPickerComponent, ContactsComponent, AdvancedCardsComponent, AdvancedButtonsComponent],
@@ -50,7 +58,14 @@ import { AdvancedButtonsComponent } from './buttons/advanced-buttons/advanced-bu
     ReactiveFormsModule,
     ChartsModule,
     HttpClientModule,
-    ColorPickerModule
+    ColorPickerModule,
+    PerfectScrollbarModule
+  ],
+  providers : [
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    }
   ]
 })
 export class MainModule { }

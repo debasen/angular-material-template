@@ -1,12 +1,16 @@
     <mat-drawer-container (backdropClick)="onBackdropClick()" class="full-width" autosize>
-        <mat-drawer class="drawer-content" [mode]="mode" [autoFocus]='false' [opened]="isOpen?'':null">
-            <app-sidebar (menuSelect)="onMenuSelect()"></app-sidebar>
+        <mat-drawer class="drawer-content" [mode]="mode" [autoFocus]='false' [opened]="isOpen?'':null" >
+            <perfect-scrollbar>
+                <app-sidebar (menuSelect)="onMenuSelect()"></app-sidebar>
+            </perfect-scrollbar>
         </mat-drawer>
         <mat-drawer-content class="full-width">
+            <perfect-scrollbar>
             <app-navbar></app-navbar>
             <div class="main-content">
                 <router-outlet></router-outlet>
             </div>
+        </perfect-scrollbar>
             <app-footer></app-footer>
         </mat-drawer-content>
     </mat-drawer-container>
