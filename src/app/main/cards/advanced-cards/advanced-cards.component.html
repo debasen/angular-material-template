@@ -1,0 +1,262 @@
+<h4 class="card-category">Colored Header Card</h4>
+<mat-divider class="mb-4"></mat-divider>
+<div class="row">
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Color Card'" mode="header">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit. Nullam quis sapien ullamcorper,
+            lobortis nibh vitae, semper lectus.
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Card with Color Picker'" mode="header" [picker]="true" color="warn">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit. Nullam quis sapien ullamcorper,
+            lobortis nibh vitae, semper lectus.
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Color Card With Icon'" mode="header" [picker]="true" color="accent" icon="home">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit. Nullam quis sapien ullamcorper,
+            lobortis nibh vitae, semper lectus.
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Color Letter Icon'" mode="header" color="warn" icon="letter">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit. Nullam quis sapien ullamcorper,
+            lobortis nibh vitae, semper lectus.
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Card with Chart'" icon="bar_chart" mode="header" color="accent" icon="bar_chart" footerAlign="center">
+            <app-dark-line-chart [dataSet]="chart1.data" [labels]="chart1.labels" [min]="0" [max]="50" [stepSize]="10" color="black">
+            </app-dark-line-chart>
+            <div footer>
+                REVENUE
+            </div>
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Footer'" color="primary" mode="header" icon="letter" footerAlign="right">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit.
+            <div footer>
+                <button mat-raised-button color="primary">OK</button>
+            </div>
+        </app-dark-card>
+    </div>
+</div>
+
+<h4 class="card-category">Colored Card</h4>
+<mat-divider class="mb-4"></mat-divider>
+<div class="row">
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Color Card'">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit. Nullam quis sapien ullamcorper,
+            lobortis nibh vitae, semper lectus.
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Card with Color Picker'" [picker]="true" color="warn">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit. Nullam quis sapien ullamcorper,
+            lobortis nibh vitae, semper lectus.
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Color Card With Icon'" [picker]="true" color="accent" icon="home">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit. Nullam quis sapien ullamcorper,
+            lobortis nibh vitae, semper lectus.
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Color Letter Icon'" color="warn" icon="letter">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit. Nullam quis sapien ullamcorper,
+            lobortis nibh vitae, semper lectus.
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Card with Chart'" icon="bar_chart" color="accent" footerAlign="center">
+            <app-dark-line-chart [dataSet]="chart1.data" [labels]="chart1.labels" [min]="0" [max]="50" [stepSize]="10">
+            </app-dark-line-chart>
+            <div footer>
+                REVENUE
+            </div>
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Footer'" color="primary" icon="letter" footerAlign="right">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit.
+            <div footer>
+                <button mat-raised-button>OK</button>
+            </div>
+        </app-dark-card>
+    </div>
+</div>
+
+
+<h4 class="card-category">Raised Header Card</h4>
+<mat-divider class="mb-4"></mat-divider>
+<div class="row">
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Color Card'" mode="header" header="raised">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit. Nullam quis sapien ullamcorper,
+            lobortis nibh vitae, semper lectus.
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Card with Color Picker'" mode="header" header="raised" [picker]="true" color="warn">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit. Nullam quis sapien ullamcorper,
+            lobortis nibh vitae, semper lectus.
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Color Card With Icon'" mode="header" header="raised" [picker]="true" color="accent" icon="home">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit. Nullam quis sapien ullamcorper,
+            lobortis nibh vitae, semper lectus.
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Color Letter Icon'" mode="header" header="raised" color="warn" icon="letter">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit. Nullam quis sapien ullamcorper,
+            lobortis nibh vitae, semper lectus.
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Card with Chart'" icon="bar_chart" mode="header" header="raised" color="accent" footerAlign="center">
+            <app-dark-line-chart [dataSet]="chart1.data" [labels]="chart1.labels" [min]="0" [max]="50" [stepSize]="10" color="black">
+            </app-dark-line-chart>
+            <div footer>
+                REVENUE
+            </div>
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Footer'" color="primary" mode="header" header="raised" icon="letter" footerAlign="right">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit.
+            <div footer>
+                <button mat-raised-button color="primary">OK</button>
+            </div>
+        </app-dark-card>
+    </div>
+</div>
+
+<h4 class="card-category">Colored Card Raised Header</h4>
+<mat-divider class="mb-4"></mat-divider>
+<div class="row">
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Color Card'" header="raised">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit. Nullam quis sapien ullamcorper,
+            lobortis nibh vitae, semper lectus.
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Card with Color Picker'" [picker]="true" color="warn" header="raised">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit. Nullam quis sapien ullamcorper,
+            lobortis nibh vitae, semper lectus.
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Color Card With Icon'" [picker]="true" color="accent" icon="home" header="raised">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit. Nullam quis sapien ullamcorper,
+            lobortis nibh vitae, semper lectus.
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Color Letter Icon'" color="warn" icon="letter" header="raised">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit. Nullam quis sapien ullamcorper,
+            lobortis nibh vitae, semper lectus.
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Card with Chart'" icon="bar_chart" color="accent" footerAlign="center" header="raised">
+            <app-dark-line-chart [dataSet]="chart1.data" [labels]="chart1.labels" [min]="0" [max]="50" [stepSize]="10">
+            </app-dark-line-chart>
+            <div footer>
+                REVENUE
+            </div>
+        </app-dark-card>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Footer'" color="primary" icon="letter" footerAlign="right" header="raised">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit.
+            <div footer>
+                <button mat-raised-button>OK</button>
+            </div>
+        </app-dark-card>
+    </div>
+</div>
+
+
+<h4 class="card-category">Custom Header</h4>
+<mat-divider class="mb-4"></mat-divider>
+<div class="row">
+    <div class="col-lg-4 col-md-6">
+        <app-dark-card [title]="'Color Card'" mode="header">
+            <div customHeader>
+                Custom Header
+            </div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis rhoncus tortor, a auctor tortor.
+            Vivamus lectus leo, condimentum in mi nec, tempor interdum augue. Morbi a fringilla arcu. Vivamus
+            rutrum odio velit, eu fermentum urna facilisis eget. Pellentesque porta semper consequat. Nulla
+            sapien ipsum, vehicula sit amet ipsum sed, congue mollis elit. Nullam quis sapien ullamcorper,
+            lobortis nibh vitae, semper lectus.
+        </app-dark-card>
+    </div>
+</div>

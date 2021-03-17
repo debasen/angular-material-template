@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ColorPickerComponent } from './color_picker.component';
+import {AudioPlayerComponent} from '../../shared/audio-player/audio-player.component'
 export interface DialogData {
   newBackGrndClr: string;
   // name: string;
@@ -41,7 +42,7 @@ export class IotDashboardComponent implements OnInit{
             "Bed Room",
             "Living Room"],
     features:[{name:"Light 1",icon:"emoji_objects",on: true,color:"#ff0000"},
-              {name:"Light 2",icon:"emoji_objects",on: true,color:"#00ff00"},
-              {name:"Fan",icon:"emoji_objects",on: true,color:"#0000ff"}]
+              {name:"Light 2",icon:"wb_incandescent",on: false,color:"#00ff00"},
+              {name:"Light 3",icon:"wb_iridescent",on: true,color:"#0000ff"}]
   }
 }

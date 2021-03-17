@@ -1,0 +1,139 @@
+<div class="row">
+  <div class="col-lg-6">
+    <mat-card dynamicHeight style="width: 60vh;border-radius: 43px;">
+      <div class="row">
+        <div class="col-4" style="margin-left: -13px;
+        margin-top: 14px;">
+          <button class="example-small-box" (mouseenter)="playPauseBtnShw()" 
+          (mouseleave)="playPauseBtnHide()"
+           mat-raised-button 
+           (click)="play()">
+            <img src="{{currentSongPlaying.albumArt}}" 
+            [ngClass]="{'image':rotateButton}" 
+            class="play_icon_rotate"
+            >
+            <span   #playPauseButton [ngClass]="{'hideNshow':!playButtonState}"><mat-icon 
+            fontSet="material-icons-outlined" class="play-icon">{{playButtonState?'play_circle_outline':'pause_circle_outline'}}
+            </mat-icon>
+          </span>
+          </button>
+        </div>
+        <div class="col-8">
+          <div>
+            <marquee class="m-0 scroll-left" behavior="scroll" direction="left">{{currentSongPlaying.audio_name}}</marquee>
+          </div>
+          <div>
+            <h4 class="m-0 artist_name" style=" opacity:0.8">{{currentSongPlaying.artist}}</h4>
+          </div>
+          <br>
+          <div style="height: 28px;">
+            <audio [src]="currentSongPlaying.audio" #audioPlayer (timeupdate)="songPos = playSong.currentTime/playSong.duration * 100"></audio>
+            <mat-progress-bar (mouseenter)="slide = true; sliderPos = songPos"
+             *ngIf="!slide" color="primary" mode="determinate" [value]="songPos" >
+            </mat-progress-bar>
+            <!-- *ngIf="slide" -->
+              <mat-slider style="width: 104%;
+              position: relative;
+              top: -25px;
+              margin-left: -3px;
+              margin-top: 3px;"
+              *ngIf="slide"
+              thumbLabel
+              [displayWith]="currentTime"
+              (change)="playSong.currentTime = $event.value/100*playSong.duration;songPos = $event.value"
+              color="primary"
+              [value]="sliderPos"
+              min=0
+              max=100
+              step=1
+              (mouseleave)="slide = false"
+              ></mat-slider>
+              
+          </div>
+          <!-- <br> -->
+          <div>
+            <div class="row">
+              <div class="col-3">
+                <button mat-raised-button class="btn_palette" [ngClass]="{'showVolSlider' : ShowvolumControl}"
+                  (mouseenter)="showVolSlider($event)" (mouseleave)="hideVolSlider($event)">
+                  <ng-container *ngIf="ShowvolumControl">
+                    <mat-icon fontSet="material-icons-outlined" [ngClass]="{'_mute_btn':(volume>0)}" (click)="muteOnClick()">volume_off</mat-icon>
+                    <mat-slider [(ngModel)]="volume" (change)="volControl()"></mat-slider>
+                    <mat-icon fontSet="material-icons-outlined" [ngClass]="{'_mute_btn':(volume<=0)}" (click)="fullVolOnClick()">volume_up</mat-icon>
+                  </ng-container>
+                  <mat-icon fontSet="material-icons-outlined" class="palette" *ngIf="!this.hideVolIcon">
+                    {{volume==0?'volume_off':volume<=30?'volume_down':'volume_up'}}
+                  </mat-icon>
+                </button>
+              </div>
+              <div class="col-3">
+                <button [disabled]="disableButton_previous" mat-raised-button class="btn_palette" (click)="playPrevious(currentSongPlaying)" >
+                    <mat-icon  fontSet="material-icons-outlined">skip_previous</mat-icon>
+                </button>
+              </div>
+              <div class="col-3">
+                <button mat-raised-button [disabled]="disableButton_next" class="btn_palette"
+                 (click)="playNext(currentSongPlaying)">
+                    <mat-icon fontSet="material-icons-outlined">skip_next</mat-icon>
+                </button>
+              </div>
+              <div class="col-3">
+                <button mat-raised-button class="btn_palette" (click)="loopIconClicked()">
+                    <mat-icon fontSet="material-icons-outlined">{{loopIcons[loopIconIndex]}}</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- delete hobe -->
+        <!-- {{(volume<=50)?'volume_down':'volume_up'}} -->
+        <mat-card-content>
+          <!-- <h2 class="example-h2">Progress bar configuration</h2>
+            
+                <section class="example-section">
+                  <label class="example-margin">Color:</label>
+                  <mat-radio-group [(ngModel)]="color">
+                    <mat-radio-button class="example-margin" value="primary">
+                      Primary
+                    </mat-radio-button>
+                    <mat-radio-button class="example-margin" value="accent">
+                      Accent
+                    </mat-radio-button>
+                    <mat-radio-button class="example-margin" value="warn">
+                      Warn
+                    </mat-radio-button>
+                  </mat-radio-group>
+                </section> -->
+
+          <!-- <section class="example-section">
+                  <label class="example-margin">Mode:</label>
+                  <mat-radio-group [(ngModel)]="mode">
+                    <mat-radio-button class="example-margin" value="determinate">
+                      Determinate
+                    </mat-radio-button>
+                    <mat-radio-button class="example-margin" value="indeterminate">
+                      Indeterminate
+                    </mat-radio-button>
+                    <mat-radio-button class="example-margin" value="buffer">
+                      Buffer
+                    </mat-radio-button>
+                    <mat-radio-button class="example-margin" value="query">
+                      Query
+                    </mat-radio-button>
+                  </mat-radio-group>
+                </section> -->
+
+          <!-- <section class="example-section">
+            <label class="example-margin">Progress:</label>
+            <mat-slider class="example-margin" [(ngModel)]="value"></mat-slider>
+          </section> -->
+          <!-- <section class="example-section" *ngIf="mode === 'buffer'">
+                  <label class="example-margin">Buffer:</label>
+                  <mat-slider class="example-margin" [(ngModel)]="bufferValue"></mat-slider>
+                </section> -->
+
+        </mat-card-content>
+      </div>
+    </mat-card>
+  </div>
+</div>

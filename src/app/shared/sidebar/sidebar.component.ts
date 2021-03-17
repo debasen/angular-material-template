@@ -13,17 +13,26 @@ export const MENU_ITEMS: Array<SidebarItem> = [
     ]
   },
   {
-    icon: 'description', title: 'Forms', subMenu: [
-      { icon: 'description', title: 'Basic Form', url: '/main/forms/basic-form' },
-      { icon: 'description', title: 'Advanced Form', url: '/main/forms/advanced-form' }
-    ]
+    icon: 'description', title: 'Forms', url: '/main/forms/basic-forms'
+    //  subMenu: [
+    //   { icon: 'description', title: 'Basic Form', url: '/main/forms/basic-forms' },
+    //   { icon: 'description', title: 'Advanced Form', url: '/main/forms/advanced-forms' }
+    // ]
   },
   { icon: 'star', title: 'Icons', url: '/main/icons' },
-  { icon: 'flip_to_front', title: 'Cards', url: '/main/cards' },
-  { icon: 'play_circle_outline', title: 'Buttons', url: '/main/buttons' },
+  { icon: 'flip_to_front', title: 'Cards', url: '/main/cards', subMenu:[
+    { title: 'Basic Cards', url: '/main/cards/basic-cards' },
+    { title: 'Advanced Cards', url: '/main/cards/advanced-cards' },
+  ] },
+  { icon: 'play_circle_outline', title: 'Buttons', subMenu:[
+    { title: 'Basic Buttons', url: '/main/buttons' },
+    { title: 'Advanced Buttons', url: '/main/advanced-buttons' },
+  ]
+ },
   { icon: 'view_module', title: 'Tables', url: '/main/tables' },
   { icon: 'insert_chart_outlined', title: 'Charts', url: '/main/charts' },
-  { icon: 'playlist_add_check', title: 'Steppers', url: '/main/steppers' }
+  { icon: 'playlist_add_check', title: 'Steppers', url: '/main/steppers' },
+  { icon: 'account_box', title: 'Contacts', url: '/main/contacts' }
 ];
 
 @Component({
@@ -62,9 +71,11 @@ export class SidebarComponent implements OnInit {
 
 interface SidebarItem {
   icon?: string,  // Refer to https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/
+  // Use 1 or 2 letters instead of icon, if both are missing, letter icon will be created based on title
+  abbr?: string,
   title: string,
   url?: string,
   disabled?: boolean,
   isActive?: boolean,
-  subMenu?: Array<{ icon?: string, title: string, url: string, disabled?: boolean }>
+  subMenu?: Array<{ icon?: string,abbr?: string, title: string, url: string, disabled?: boolean }>
 }

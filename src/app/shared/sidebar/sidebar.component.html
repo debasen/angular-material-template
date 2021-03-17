@@ -3,7 +3,7 @@
         <img src="assets/images/brand-logo.png" />
         Angular Template
     </h2>
-    
+
 </div>
 <mat-divider></mat-divider>
 <div class="sidebar-container">
@@ -16,17 +16,23 @@
                     </mat-panel-title>
                 </mat-expansion-panel-header>
                 <div class="sub-menu-item" *ngFor="let subMenuItem of menuItem.subMenu; let i = index">
-                    <a [routerLink]="subMenuItem.url" [disabled]="subMenuItem.disabled" routerLinkActive="active-menu" mat-button (click)="menuSelected()">
-                        <mat-icon>{{subMenuItem.icon}}</mat-icon>{{subMenuItem.title}}
+                    <a [routerLink]="subMenuItem.url" [disabled]="subMenuItem.disabled" routerLinkActive="active-menu"
+                        mat-button (click)="menuSelected()">
+                        <mat-icon *ngIf="subMenuItem.icon">{{subMenuItem.icon}}</mat-icon>
+                        <app-letter-icon size="small" *ngIf="!subMenuItem.icon" [title]="subMenuItem.title">{{subMenuItem.icon}}
+                        </app-letter-icon>
+                        {{subMenuItem.title}}
                     </a>
                 </div>
             </mat-expansion-panel>
         </div>
         <div class="menu-item" *ngIf="!menuItem.subMenu || menuItem.subMenu.length===0">
-            <a [routerLink]="menuItem.url" routerLinkActive="active-menu" mat-button [disabled]="menuItem.disabled" (click)="menuSelected()">
-                <mat-icon>{{menuItem.icon}}</mat-icon>{{menuItem.title}}
+            <a [routerLink]="menuItem.url" routerLinkActive="active-menu" mat-button [disabled]="menuItem.disabled"
+                (click)="menuSelected()">
+                <mat-icon *ngIf="menuItem.icon">{{menuItem.icon}}</mat-icon>
+                <app-letter-icon *ngIf="!menuItem.icon" [title]="menuItem.title">{{menuItem.icon}}</app-letter-icon>
+                {{menuItem.title}}
             </a>
         </div>
     </ng-container>
 </div>
-

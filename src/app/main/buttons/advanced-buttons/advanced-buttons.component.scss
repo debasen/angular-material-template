@@ -1,0 +1,112 @@
+@import '../../../../assets/css/variables';
+
+.icon-button {
+    padding: 0px 10px;
+
+    mat-icon {
+        font-size  : 20px;
+        margin-left: -4px
+    }
+}
+
+.button-type-header {
+    width     : 75px;
+    font-size : 16px;
+    align-self: center;
+}
+
+.buttons-container {
+    flex-grow: 1;
+}
+
+.button-row {
+    display   : flex;
+    margin-top: 12px;
+}
+
+.loading-icon.fast {
+    animation  : spin .5s linear infinite;
+    line-height: 25px;
+}
+
+.loading-icon {
+    animation  : spin 1s linear infinite;
+    line-height: 25px;
+}
+
+.loading-icon.slow {
+    animation  : spin 2s linear infinite;
+    line-height: 25px;
+}
+
+.loading-icon-only {
+    min-width : 24px;
+    transition: ease-out .2s;
+    padding   : 0px 10px;
+
+    mat-icon {
+        font-size: 20px;
+    }
+}
+
+.color-primary {
+    background-image: $primary;
+    color           : #fff
+}
+
+
+.color-warn {
+    background-image: $warn;
+    color           : #fff
+}
+
+.color-accent {
+    background-image: $accent;
+    color           : #fff
+}
+
+
+.color-primary-light {
+    background-image: $primaryLight;
+}
+
+.color-warn-light {
+    background-image: $warnLight;
+}
+
+.color-accent-light {
+    background-image: $accentLight;
+}
+
+button.lg {
+    font-size: 22px;
+    padding  : 8px 18px;
+}
+
+button.sm {
+    font-size  : 12px;
+    padding    : 4px 8px;
+    min-height : unset;
+    font-weight: unset;
+    line-height: unset;
+    min-width  : unset;
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform        : rotate(360deg);
+    }
+}

@@ -6,21 +6,27 @@ import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HamburgerIconComponent } from './hamburger-icon/hamburger-icon.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { LetterIconComponent } from './letter-icon/letter-icon.component';
+import { AudioPlayerComponent } from './audio-player/audio-player.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [SidebarComponent, NavbarComponent, HamburgerIconComponent, FooterComponent],
+  declarations: [SidebarComponent, NavbarComponent, HamburgerIconComponent, FooterComponent, LetterIconComponent,AudioPlayerComponent],
   imports: [
     CommonModule,
     AngularMaterialModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ], exports: [
     AngularMaterialModule,
     SidebarComponent,
     NavbarComponent,
     HamburgerIconComponent,
-    FooterComponent
+    FooterComponent,
+    LetterIconComponent,
+    AudioPlayerComponent
+
   ]
 })
 export class SharedModule { }
