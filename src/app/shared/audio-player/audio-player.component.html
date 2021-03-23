@@ -27,7 +27,7 @@
           </div>
           <br>
           <div style="height: 28px;">
-            <audio [src]="currentSongPlaying.audio" #audioPlayer (timeupdate)="songPos = playSong.currentTime/playSong.duration * 100"></audio>
+            <audio #audioPlayer (timeupdate)="songPos = playSong.currentTime/playSong.duration * 100" (ended)="playNext(currentSongPlaying)"></audio>
             <mat-progress-bar (mouseenter)="slide = true; sliderPos = songPos"
              *ngIf="!slide" color="primary" mode="determinate" [value]="songPos" >
             </mat-progress-bar>
@@ -79,7 +79,7 @@
               </div>
               <div class="col-3">
                 <button mat-raised-button class="btn_palette" (click)="loopIconClicked()">
-                    <mat-icon fontSet="material-icons-outlined">{{loopIcons[loopIconIndex]}}</mat-icon>
+                    <mat-icon [ngClass]="{'bold-icon':boldIcon}" fontSet="material-icons-outlined">{{loopIcons[loopIconIndex]}}</mat-icon>
                 </button>
               </div>
             </div>
