@@ -1,4 +1,4 @@
-import { AfterContentInit, AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NavigationService } from '../shared/navigation.service';
 import { environment } from '../../environments/environment'
@@ -11,7 +11,7 @@ import { environment } from '../../environments/environment'
     '(window:resize)': 'onResize($event)'
   }
 })
-export class MainComponent implements OnInit{
+export class MainComponent implements OnInit, OnDestroy{
   subscription : Subscription;
   isOpen = true;
   mode : 'side'|'over'|'push' = 'side';
@@ -49,5 +49,9 @@ export class MainComponent implements OnInit{
     if(this.mode === 'over'){
       this.navService.close();
     }
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 }
