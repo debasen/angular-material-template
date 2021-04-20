@@ -7,6 +7,7 @@ import { CardsComponent } from './cards/cards.component';
 import { ChartsComponent } from './charts/charts.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ExampleComponent } from './example/example.component';
 import { AdvancedFormComponent } from './forms/advanced-form/advanced-form.component';
 import { BasicFormComponent } from './forms/basic-form/basic-form.component';
 import { FormsComponent } from './forms/forms.component';
@@ -42,7 +43,8 @@ const routes: Routes = [
       { path: 'charts', component: ChartsComponent },
       { path: 'steppers', component: SteppersComponent },
       {path:'iot-dashboard',component:IotDashboardComponent},
-      {path:'contacts',component:ContactsComponent}
+      {path:'contacts',component:ContactsComponent},
+      {path:'example',component:ExampleComponent}
     ]
   },
 ];

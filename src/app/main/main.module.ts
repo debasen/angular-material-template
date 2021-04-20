@@ -40,6 +40,7 @@ import { AdvancedButtonsComponent } from './buttons/advanced-buttons/advanced-bu
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { ExampleComponent } from './example/example.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -47,7 +48,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
 
 @NgModule({
-  declarations: [DashboardComponent, MainComponent, FormsComponent, BasicFormComponent, AdvancedFormComponent, CardsComponent, IconsComponent, MatSuccessComponent, ButtonsComponent, TablesComponent,ChartsComponent, LineChartComponent, BarChartComponent, PieChartComponent, DoughnutChartComponent, RadarChartComponent, PolarAreaChartComponent, BubbleChartComponent, ScatterChartComponent, SteppersComponent, StepperWithErrorComponent, DarkLineChartComponent, DarkCardComponent, DarkBarChartComponent, IotDashboardComponent,ColorPickerComponent, ContactsComponent, AdvancedCardsComponent, AdvancedButtonsComponent],
+  declarations: [DashboardComponent, MainComponent, FormsComponent, BasicFormComponent, AdvancedFormComponent, CardsComponent, IconsComponent, MatSuccessComponent, ButtonsComponent, TablesComponent,ChartsComponent, LineChartComponent, BarChartComponent, PieChartComponent, DoughnutChartComponent, RadarChartComponent, PolarAreaChartComponent, BubbleChartComponent, ScatterChartComponent, SteppersComponent, StepperWithErrorComponent, DarkLineChartComponent, DarkCardComponent, DarkBarChartComponent, IotDashboardComponent,ColorPickerComponent, ContactsComponent, AdvancedCardsComponent, AdvancedButtonsComponent, ExampleComponent],
   imports: [
     CommonModule,
     MainRoutingModule,

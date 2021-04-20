@@ -4,7 +4,7 @@ import { Label, Color, BaseChartDirective, } from 'ng2-charts';
 import { environment } from '../../../../environments/environment';
 
 @Component({
-  selector: 'app-dark-line-chart',
+  selector: 'amt-dark-line-chart',
   templateUrl: './dark-line-chart.component.html',
   styleUrls: ['./dark-line-chart.component.scss']
 })

@@ -1,7 +1,7 @@
 import { Component, ContentChild, ElementRef, Input, OnInit, TemplateRef, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-dark-card',
+  selector: 'amt-dark-card',
   templateUrl: './dark-card.component.html',
   styleUrls: ['./dark-card.component.scss']
 })

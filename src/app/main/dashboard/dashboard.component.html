@@ -1,21 +1,21 @@
 <div class="row">
     <div class="col-lg-4 col-md-6">
-        <app-dark-card title="Revenue" [picker]="true">
-            <app-dark-line-chart [dataSet]="chart1.data" [labels]="chart1.labels" [min]="0" [max]="50" [stepSize]="10" background="true">
-            </app-dark-line-chart>
-        </app-dark-card>
+        <amt-dark-card title="Revenue" [picker]="true">
+            <amt-dark-line-chart [dataSet]="chart1.data" [labels]="chart1.labels" [min]="0" [max]="50" [stepSize]="10" background="true">
+            </amt-dark-line-chart>
+        </amt-dark-card>
     </div>
     <div class="col-lg-4 col-md-6">
-        <app-dark-card title="Sales" color="warn" [picker]="true">
-            <app-dark-bar-chart [dataSet]="chart2.data" [labels]="chart2.labels" [min]="0" [max]="50" [stepSize]="10">
-            </app-dark-bar-chart>
-        </app-dark-card>
+        <amt-dark-card title="Sales" color="warn" [picker]="true">
+            <amt-dark-bar-chart [dataSet]="chart2.data" [labels]="chart2.labels" [min]="0" [max]="50" [stepSize]="10">
+            </amt-dark-bar-chart>
+        </amt-dark-card>
     </div>
     <div class="col-lg-4 col-md-6">
-        <app-dark-card title="Inventory" color="accent" [picker]="true">
-            <app-dark-line-chart [dataSet]="chart3.data" [labels]="chart3.labels" [min]="0" [max]="50" [stepSize]="10">
-            </app-dark-line-chart>
-        </app-dark-card>
+        <amt-dark-card title="Inventory" color="accent" [picker]="true">
+            <amt-dark-line-chart [dataSet]="chart3.data" [labels]="chart3.labels" [min]="0" [max]="50" [stepSize]="10">
+            </amt-dark-line-chart>
+        </amt-dark-card>
     </div>
 </div>
 

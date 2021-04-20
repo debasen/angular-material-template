@@ -3,7 +3,7 @@ import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Label } from 'ng2-charts';
 
 @Component({
-  selector: 'app-dark-bar-chart',
+  selector: 'amt-dark-bar-chart',
   templateUrl: './dark-bar-chart.component.html',
   styleUrls: ['./dark-bar-chart.component.scss']
 })

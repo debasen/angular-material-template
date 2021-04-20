@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { MainModule } from './main/main.module';
+import { PagesModule } from './pages/pages.module';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full'},
-  { path: 'main', loadChildren : ()=> import('./main/main.module').then(m=>m.MainModule) },
-  { path: 'pages', loadChildren : ()=> import('./pages/pages.module').then(m=>m.PagesModule) },
+  { path: 'main', loadChildren : ()=> MainModule },
+  { path: 'pages', loadChildren : ()=> PagesModule },
 ];
 
 @NgModule({
