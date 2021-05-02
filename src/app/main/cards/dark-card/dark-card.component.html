@@ -2,7 +2,7 @@
     <div class="dark-card-header {{mode === 'header' ? color : null}}" [ngClass]="{'dark' : mode === 'header', 'raised': header === 'raised', 'mat-elevation-z5': header === 'raised'}">
       <div #customHeader><ng-content select="[customHeader]"></ng-content></div>
       <ng-container *ngIf="!customHeader.hasChildNodes()">
-        <app-letter-icon [title]="title" *ngIf="icon === 'letter'"></app-letter-icon>
+        <amt-letter-icon [title]="title" *ngIf="icon === 'letter'"></amt-letter-icon>
         <mat-icon *ngIf="icon && icon!=='letter'">{{icon}}</mat-icon>
         <h3>{{title}}</h3>
         <div class="spacer"></div>

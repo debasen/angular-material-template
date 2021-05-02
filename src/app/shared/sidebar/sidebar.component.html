@@ -19,8 +19,8 @@
                     <a [routerLink]="subMenuItem.url" [disabled]="subMenuItem.disabled" routerLinkActive="active-menu"
                         mat-button (click)="menuSelected()">
                         <mat-icon *ngIf="subMenuItem.icon">{{subMenuItem.icon}}</mat-icon>
-                        <app-letter-icon size="small" *ngIf="!subMenuItem.icon" [title]="subMenuItem.title">{{subMenuItem.icon}}
-                        </app-letter-icon>
+                        <amt-letter-icon size="small" *ngIf="!subMenuItem.icon" [title]="subMenuItem.title">{{subMenuItem.icon}}
+                        </amt-letter-icon>
                         {{subMenuItem.title}}
                     </a>
                 </div>
@@ -30,7 +30,7 @@
             <a [routerLink]="menuItem.url" routerLinkActive="active-menu" mat-button [disabled]="menuItem.disabled"
                 (click)="menuSelected()">
                 <mat-icon *ngIf="menuItem.icon">{{menuItem.icon}}</mat-icon>
-                <app-letter-icon *ngIf="!menuItem.icon" [title]="menuItem.title">{{menuItem.icon}}</app-letter-icon>
+                <amt-letter-icon *ngIf="!menuItem.icon" [title]="menuItem.title">{{menuItem.icon}}</amt-letter-icon>
                 {{menuItem.title}}
             </a>
         </div>

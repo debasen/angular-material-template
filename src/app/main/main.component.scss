@@ -11,6 +11,7 @@
 .main-content{
   padding: 30px;
   padding-bottom: 80px;
+  min-height: calc(100vh - 81px - 64px)
 }
 
 .drawer-content{
@@ -20,9 +21,8 @@
 
 .drawer-main-content{
   width: calc(100vw - 250px);
-  position: fixed;
-  overflow:hidden
 }
+
 @media only screen and (max-width : $sm){
   .main-content{
     padding: 20px;

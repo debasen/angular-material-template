@@ -4,7 +4,7 @@
                 <app-sidebar (menuSelect)="onMenuSelect()"></app-sidebar>
             </perfect-scrollbar>
         </mat-drawer>
-        <mat-drawer-content class="drawer-main-content">
+        <mat-drawer-content class="drawer-main-content" [ngClass]="{'w-100':!isOpen}">
             <app-navbar></app-navbar>
                 <div class="main-section">
                     <perfect-scrollbar>
