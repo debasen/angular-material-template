@@ -1,5 +1,5 @@
 <mat-toolbar color="primary" [ngClass]="{'sticky': sticky}">
-        <app-hamburger-icon (click)="toggleSidebar()"></app-hamburger-icon>
+        <amt-hamburger-icon (click)="toggleSidebar()" [standalone]="false"></amt-hamburger-icon>
     <span>{{getTitle()}}</span>
     <span class="spacer"></span>
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with heart icon">

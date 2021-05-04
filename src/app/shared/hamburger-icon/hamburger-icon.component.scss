@@ -11,7 +11,9 @@
     background: #ffffff;
     margin: 4px auto;
 }
-
+.invert-color .bar{
+  background: #000000;
+}
 .con {
   width: auto;
   margin: 0 auto;
@@ -24,7 +26,7 @@
 
 .col {
   display: inline-block;
-  width: 24%;
+  width: 55px;
   text-align: center;
   height: auto;
   position: relative;
@@ -55,11 +57,11 @@
         width: 0;
       }
       .bottom {
-        -webkit-transform: translateY(-9px) rotateZ(-45deg);
-        -moz-transform: translateY(-9px) rotateZ(-45deg);
-        -ms-transform: translateY(-9px) rotateZ(-45deg);
-        -o-transform: translateY(-9px) rotateZ(-45deg);
-        transform: translateY(-9px) rotateZ(-45deg);
+        -webkit-transform: translateY(-7px) rotateZ(-45deg);
+        -moz-transform: translateY(-7px) rotateZ(-45deg);
+        -ms-transform: translateY(-7px) rotateZ(-45deg);
+        -o-transform: translateY(-7px) rotateZ(-45deg);
+        transform: translateY(-7px) rotateZ(-45deg);
       }
 
       .arrow-top {
@@ -94,7 +96,7 @@
         -ms-transform: rotateZ(-45deg) translate(-6px, -5px);
         -o-transform: rotateZ(-45deg) translate(-6px, -5px);
         transform: rotateZ(-45deg) translate(-6px, -5px);
-        width: 12px;
+        width: 15px;
       }
       .arrow-middle-r {
         -webkit-transform: translateX(0px);
@@ -109,7 +111,7 @@
         -ms-transform: rotateZ(45deg) translate(-6px, 4px);
         -o-transform: rotateZ(45deg) translate(-6px, 4px);
         transform: rotateZ(45deg) translate(-6px, 4px);
-        width: 12px;
+        width: 15px;
       }
       .arrow-top-fall {
         -webkit-transform: translateY(6px);
