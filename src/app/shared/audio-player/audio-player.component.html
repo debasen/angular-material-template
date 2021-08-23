@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-6">
-    <mat-card dynamicHeight style="width: 60vh;border-radius: 43px;">
+    <mat-card dynamicHeight style="width: 60vh;border-radius: 25px;z-index: 2;">
       <div class="row">
         <div class="col-4" style="margin-left: -13px;
         margin-top: 14px;">
@@ -19,8 +19,21 @@
           </button>
         </div>
         <div class="col-8">
-          <div>
-            <marquee class="m-0 scroll-left" behavior="scroll" direction="left">{{currentSongPlaying.audio_name}}</marquee>
+          <div class="row">
+          <div class="col-10">
+            <marquee class="m-0 scroll-left" style="width: 223px;" behavior="scroll" direction="left">{{currentSongPlaying.audio_name}}</marquee>
+          </div>
+          <div class="col-2">
+            <button mat-icon-button class="btn_palette" style="margin-top: -10px;
+            
+            margin-left: 5px;
+            
+            color: #6c757d;"
+            (click)="showlist()"
+            >
+              <mat-icon  fontSet="material-icons-outlined">playlist_play</mat-icon>
+          </button>
+          </div>
           </div>
           <div>
             <h4 class="m-0 artist_name" style=" opacity:0.8">{{currentSongPlaying.artist}}</h4>
@@ -136,4 +149,40 @@
       </div>
     </mat-card>
   </div>
+  
+  <mat-card dynamicHeight  style="width: 59vh;
+  border-radius: 24px;
+  position: relative;
+  top: -50px;
+  margin-left: 19px;
+  "
+  *ngIf="visible">
+  <perfect-scrollbar style="max-height: 290px;">
+  <div [@slideInOut] style="margin-top: 30px;">
+    <div *ngFor="let audio of audioData">
+   <div class="row">
+    <div class="col-lg-3">
+      <button class="thumbnail" (click)="playSingle(audioData.indexOf(audio),{pos:'list'})" mat-icon-button>
+      </button>
+      <img src="{{audio.albumArt}}" class="thumbnail-img">
+    </div>
+    <div class="col-lg-3">
+      <h4>{{audio.audio_name}}</h4>
+    </div>
+    <div class="col-lg-3">
+      <h4>{{audio.artist}}</h4>
+    </div>
+    <div class="col-lg-3">
+     <button mat-icon-button [ngClass]="{'fvrt':favoritedSongsList.includes(audio.audio)}" (click)="favorited(audio)"><mat-icon>{{favoritedSongsList.includes(audio.audio)?'favorite':'favorite_border'}}</mat-icon></button>
+    </div>
+   </div>
+    <hr style="margin-top: -27px">
+  </div>
+  </div>
+  </perfect-scrollbar>
+  </mat-card>
 </div>
+
+
+
+

@@ -265,3 +265,55 @@
 .bold-icon{
   text-shadow: 1px 1px 2px rgb(14, 3, 5);
 }
+.thumbnail {
+  // height: 20px;
+ display: flex;
+  // align-items: center;
+  justify-content: center;
+  // margin: 16px;
+  // width: 20px;
+  // border-radius: 0px;
+  height: 40px;
+  align-items: center;
+  margin: 9px;
+  width: 40px;
+  border-radius: 0px;
+  // margin-top: -61px;
+}
+.thumbnail-img{
+  height: 40px;
+    align-items: center;
+    margin: 9px;
+    width: 40px;
+    border-radius: 0px;
+    margin-top: -70px;
+}
+.fvrt{
+  -webkit-text-fill-color: red;
+  animation-name: favo;
+  animation-duration: 200ms;
+  animation-iteration-count:1;
+  animation-timing-function: linear;
+  // transition: favo 5s ;
+}
+@keyframes favo{
+  from{
+    transform: scale(0.15);
+  }
+  to{
+    transform: scale(1);
+  }
+}
+
+// .expandable {
+//   // background: #fff;
+//   // overflow: hidden;
+//   // color: #000;   
+//   line-height: 50px;
+
+//   transition: all .5s ease-in-out;
+//   height: 0;
+//  }
+//  .expandable:target {
+//   height: 50px;
+// }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cards',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cards.component.scss']
 })
 export class CardsComponent implements OnInit {
+  product: any;
 
-  constructor() { }
+  constructor(private activatedroute:ActivatedRoute) { }
 
   ngOnInit(): void {
+    
   }
 
 }

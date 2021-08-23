@@ -32,7 +32,8 @@ export const MENU_ITEMS: Array<SidebarItem> = [
   { icon: 'view_module', title: 'Tables', url: '/main/tables' },
   { icon: 'insert_chart_outlined', title: 'Charts', url: '/main/charts' },
   { icon: 'playlist_add_check', title: 'Steppers', url: '/main/steppers' },
-  { icon: 'account_box', title: 'Contacts', url: '/main/contacts' }
+  { icon: 'account_box', title: 'Contacts', url: '/main/contacts' },
+  { icon: 'stay_current_landscape', title: 'Carousel', url: '/main/amt-carousel' }
 ];
 
 @Component({

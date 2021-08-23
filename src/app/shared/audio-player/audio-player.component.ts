@@ -1,16 +1,31 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { ThisReceiver } from '@angular/compiler';
-import { ApplicationRef, ChangeDetectionStrategy, Component, DoCheck, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ThemePalette } from '@angular/material/core';
+import { ApplicationRef, ChangeDetectionStrategy, Component, DoCheck, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { AnimationDurations, ThemePalette } from '@angular/material/core';
 import { ProgressBarMode } from '@angular/material/progress-bar';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import { MatTable } from '@angular/material/table';
 @Component({
   selector: 'app-audio-player',
   templateUrl: './audio-player.component.html',
   styleUrls: ['./audio-player.component.scss'],
+  animations: [
+    trigger('slideInOut', [
+      transition(':enter', [
+        style({transform: 'translateY(-100%)'}),
+        animate('300ms ease-in', style({transform: 'translateY(0%)'}))
+      ]),
+      transition(':leave', [
+        animate('300ms ease-in', style({transform: 'translateY(-100%)'}))
+      ])
+    ])
+  ]
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AudioPlayerComponent implements OnInit,DoCheck {
   @ViewChild('audioPlayer', {static: true}) playSongRef : ElementRef<HTMLAudioElement>;
   @ViewChild('playPauseButton', {static: true})buttonRef:ElementRef<HTMLSpanElement>;
+  @ViewChild('table') table: MatTable<any>;
   rotateButton=false;
   playButtonState=true;
   ShowvolumControl=false;
@@ -47,6 +62,14 @@ export class AudioPlayerComponent implements OnInit,DoCheck {
   isPlaying=false;
   boldIcon=false;
   randomIndex;
+  visible=false;
+  favoritedSong=false;
+  favoritedSongsList=[];
+  displayedColumns: string[]  = ['position','audio_name', 'artist', 'favorite'];
+  // celsius;
+//  farenht;
+//  frnhtShow;
+  // dataSource = audiod;
   constructor() { }
   ngDoCheck(): void {
     
@@ -198,6 +221,14 @@ export class AudioPlayerComponent implements OnInit,DoCheck {
       // this.playButtonState=!this.playButtonState;
      this.currentSongPlaying=this.audioData[indexOfCurrentSong-1];
      this.playSong.src = this.audioData[indexOfCurrentSong-1].audio; 
+     if(this.playSong.currentTime<this.playSong.duration){
+      console.log("newsong")
+     this.currentSongPlaying=this.audioData[indexOfCurrentSong+1];
+     this.playSong.pause();
+     this.playSong.src = this.audioData[indexOfCurrentSong-1].audio;
+     this.playSong.load();
+     return this.playSong.play(); 
+    }
    }
   }
   playAllLoop(index : number){
@@ -207,11 +238,16 @@ export class AudioPlayerComponent implements OnInit,DoCheck {
     this.playSong.load();
     this.playSong.play();
   }
-  playSingle(index : number){
+  playSingle(index : number,place){
     this.playSong.pause();
     this.playSong.src = this.audioData[index].audio;
     this.playSong.load();
     this.playSong.play();
+    if(place.pos==="list"){
+      this.playButtonState=false;
+      this.rotateButton=true;
+      this.currentSongPlaying=this.audioData[index]
+    }
   }
   shuffle(index : number){
     // var randomIndex = Math.floor(Math.random() *2.5+ index);
@@ -235,7 +271,11 @@ export class AudioPlayerComponent implements OnInit,DoCheck {
     if(indexOfCurrentSong===(this.audioData.length-1)){
       this.disableButton_previous=false;
       this.disableButton_next=true;
-      this.pause();
+      if(this.boldIcon==true &&this.loopIconIndex==2){
+        this.currentSongPlaying=this.audioData[indexOfCurrentSong];
+        return this.playSingle(indexOfCurrentSong,{pos:"notList"})
+      }
+      return this.pause();
     }else{
       this.disableButton_previous=false;
        if(this.boldIcon==true &&this.loopIconIndex==1){
@@ -244,7 +284,7 @@ export class AudioPlayerComponent implements OnInit,DoCheck {
        }
        if(this.boldIcon==true &&this.loopIconIndex==2){
         this.currentSongPlaying=this.audioData[indexOfCurrentSong];
-        return this.playSingle(indexOfCurrentSong)
+        return this.playSingle(indexOfCurrentSong,{pos:"notList"})
        }
        if(this.boldIcon==true &&this.loopIconIndex==3){
          console.log("shuffle")
@@ -252,6 +292,14 @@ export class AudioPlayerComponent implements OnInit,DoCheck {
         console.log(indexx)
         this.currentSongPlaying=this.audioData[indexx];
         return this.shuffle(indexx)
+       }
+       if(this.playSong.currentTime<this.playSong.duration){
+         console.log("newsong")
+        this.currentSongPlaying=this.audioData[indexOfCurrentSong+1];
+        this.playSong.pause();
+        this.playSong.src = this.audioData[indexOfCurrentSong+1].audio;
+        this.playSong.load();
+        return this.playSong.play(); 
        }
       //  this.playSong.pause();
        this.currentSongPlaying=this.audioData[indexOfCurrentSong+1];
@@ -261,5 +309,24 @@ export class AudioPlayerComponent implements OnInit,DoCheck {
        return this.pause() 
     }
   }
-  
+  showlist(){
+    this.visible=!this.visible
+    console.log(this.table)
+  }
+  favorited(song){
+    console.log(song,this.favoritedSongsList)
+    this.audioData.forEach((audio)=>{
+        if(audio.audio==song.audio){
+          if(this.favoritedSongsList.includes(audio.audio)){
+            this.favoritedSong=false
+            let indexOfSong=this.favoritedSongsList.indexOf(audio.audio)
+            this.favoritedSongsList.splice(indexOfSong,1)
+            return
+          }
+          this.favoritedSongsList.push(song.audio)
+          console.log(this.favoritedSongsList)
+          this.favoritedSong=true
+        }
+    })
+  }
 }

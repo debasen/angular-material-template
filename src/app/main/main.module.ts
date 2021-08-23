@@ -41,6 +41,9 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { ExampleComponent } from './example/example.component';
+import { AmtCarouselComponent } from './amt-carousel/amt-carousel.component';
+import { CarouselComponent } from './amt-carousel/carousel/carousel.component';
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -48,7 +51,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
 
 @NgModule({
-  declarations: [DashboardComponent, MainComponent, FormsComponent, BasicFormComponent, AdvancedFormComponent, CardsComponent, IconsComponent, MatSuccessComponent, ButtonsComponent, TablesComponent,ChartsComponent, LineChartComponent, BarChartComponent, PieChartComponent, DoughnutChartComponent, RadarChartComponent, PolarAreaChartComponent, BubbleChartComponent, ScatterChartComponent, SteppersComponent, StepperWithErrorComponent, DarkLineChartComponent, DarkCardComponent, DarkBarChartComponent, IotDashboardComponent,ColorPickerComponent, ContactsComponent, AdvancedCardsComponent, AdvancedButtonsComponent, ExampleComponent],
+  declarations: [DashboardComponent, MainComponent, FormsComponent, BasicFormComponent, AdvancedFormComponent, CardsComponent, IconsComponent, MatSuccessComponent, ButtonsComponent, TablesComponent,ChartsComponent, LineChartComponent, BarChartComponent, PieChartComponent, DoughnutChartComponent, RadarChartComponent, PolarAreaChartComponent, BubbleChartComponent, ScatterChartComponent, SteppersComponent, StepperWithErrorComponent, DarkLineChartComponent, DarkCardComponent, DarkBarChartComponent, IotDashboardComponent,ColorPickerComponent, ContactsComponent, AdvancedCardsComponent, AdvancedButtonsComponent, ExampleComponent,AmtCarouselComponent, CarouselComponent],
   imports: [
     CommonModule,
     MainRoutingModule,
