@@ -4,7 +4,7 @@
         <nav class="float-left pt-2">
             <ul>
                 <li *ngFor="let link of footerLinks">
-                    <a mat-button [href]="link.url">
+                    <a mat-button href="{{link.url}}">
                         {{link.title}}
                     </a>
                 </li>
@@ -13,7 +13,7 @@
         <div class="copyright float-right">
             &copy;
             {{test | date: 'yyyy'}}, all rights reserved by
-            <a href="javasript:void(0)" target="_blank">Angular Template</a>.
+            <a href="javascript:void(0)" target="_blank">Angular Template</a>.
         </div>
     </div>
 </footer>

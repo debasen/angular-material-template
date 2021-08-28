@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
   test : Date = new Date();
   footerLinks = [
-    {title: 'Angular Templte', url: 'javasript:void(0)'},
-    {title: 'About Us', url: 'javasript:void(0)'},
-    {title: 'Blog', url: 'javasript:void(0)'},
-    {title: 'Contact Us', url: 'javasript:void(0)'},
+    {title: 'Angular Templte', url: 'javascript:void(0)'},
+    {title: 'About Us', url: 'javascript:void(0)'},
+    {title: 'Blog', url: 'javascript:void(0)'},
+    {title: 'Contact Us', url: 'javascript:void(0)'},
   ]
 
   constructor() { }
