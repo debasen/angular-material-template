@@ -31,6 +31,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import {PlatformModule} from '@angular/cdk/platform';
 
 
 @NgModule( {
@@ -66,7 +67,8 @@ import { NgModule } from '@angular/core';
         MatSnackBarModule,
         MatTableModule,
         MatSortModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        PlatformModule
 
     ],
     exports: [
@@ -100,7 +102,8 @@ import { NgModule } from '@angular/core';
       MatSnackBarModule,
       MatTableModule,
       MatSortModule,
-      MatPaginatorModule
+      MatPaginatorModule,
+      PlatformModule
     ],
     providers: [
         MatDatepickerModule,
