@@ -2,11 +2,23 @@
     margin: 12px 0 6px;
     font-size: 20px;
 }
-
+.icon-box{
+    padding: 20px 40px;
+}
 .icon-button {
     padding: 6px;
 }
-
+.icon-column{
+    flex: 20%;
+  max-width: 20%;
+  padding: 5px 4px;
+}
+@media (min-width:992px) {
+    .icon-column {
+      flex: 10%;
+      max-width: 10%;
+    }
+  }
 .icon{
     font-size: 26px;
     position: relative;

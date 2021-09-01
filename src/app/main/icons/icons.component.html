@@ -13,7 +13,7 @@
             <h4 class="icon-category">{{iconOb.category}}</h4>
         <mat-divider class="mb-4"></mat-divider>
         <div class="row">
-            <div class="col-2 col-lg-1 text-center" *ngFor="let icon of iconOb.icons | slice : 0 : iconCacheSize">
+            <div class="icon-column text-center" *ngFor="let icon of iconOb.icons | slice : 0 : iconCacheSize">
                 <button class="icon-button" [matTooltip]="icon" [cdkCopyToClipboard]="icon" mat-raised-button (click)="iconCopied()"><mat-icon class="icon">{{icon}}</mat-icon></button>
             </div>
         </div>

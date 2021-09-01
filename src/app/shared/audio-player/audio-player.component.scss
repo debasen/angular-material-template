@@ -1,17 +1,31 @@
 // figure {
 //     margin: 0;
 // }
+html{
+  font-size: 62.5%;
+}
+// @media screen and (max-width: 600px) {
+  
+// }
+.main-box{
+   width: 30rem;
+  border-radius: 2.5rem;
+  z-index: 2;
+  max-width: 420px;
+}
+.play-button-box{
+  margin-left: -1.3rem;
+  margin-top: 1.4rem;
+}
 .example-small-box {
-    height: 100px;
+    height: 7rem;
    display: flex;
     align-items: center;
     justify-content: center;
-    margin: 16px;
-    width: 100px;
-    border-radius: 100px;
-   
+    margin: 1rem;
+    width: 7rem;
+    border-radius: 100rem;  
  }
-
  .image {
   background-position: center;
   background-repeat: no-repeat;
@@ -30,22 +44,14 @@
         transform:rotate(360deg);
     }
 }
-.song_name {
-    width:250px;
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: floatText 5s infinite linear;
-    padding-left: 100%; /*Initial offset*/
-  -ms-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  padding-left: 40px;
-  padding-top: 13px;
+  .song_name {
+    width: 16.5rem;
+    font-size: 1.5rem;
+    max-width: 228px;
   }
-  
-  .song_name:hover {
-    animation-play-state: paused;
-    // overflow: visible;
+  .show-list-btn{
+    margin-top: -.1rem;  
+    color: #6c757d;
   }
   
   @keyframes floatText {
@@ -58,8 +64,8 @@
     height: fit-content;
   }
   .scroll-left {
-    font-size: 25px;
-    height: 25px;
+    font-size: 2.5rem;
+    height: 2.5rem;
   }
   
   // .scroll-left span {
@@ -138,19 +144,19 @@
     // background-image: url("../../../assets/images/rainbow-color-gradient-mesh-background-trendy-vector-20601257.jpg");
     // background-size: contain;
     //  opacity: 0.8;
-     border-radius:14px;
-     min-width:30px;
-     padding-left: 6px;
-     padding-right: 6px;
-     padding-top:0px ;
-     padding-bottom: 0px;
-     margin-left: 6px;
+     border-radius:1.4rem;
+     min-width:3rem;
+     padding-left: .6rem;
+     padding-right: .6rem;
+     padding-top:0rem ;
+     padding-bottom: 0rem;
+     margin-left: .6rem;
      transition: .5s ease;
   }
   .btn_palette.showVolSlider {
-    width:210px;
-    border-radius: 14px;
-    padding: 0px;
+    width:21rem;
+    border-radius: 1.4rem;
+    padding: 0rem;
     transition:all 0.4s ease 0s;
     z-index: 100;
     background-color:rgba(229,229,229,0.9);
@@ -189,18 +195,18 @@
 //   }
   ////delete hobe////
   example-h2 {
-    margin: 10px;
+    margin: 1rem;
   }
   
   .example-section {
     display: flex;
     align-content: center;
     align-items: center;
-    height: 60px;
+    height: 6rem;
   }
   
   .example-margin {
-    margin: 0 10px;
+    margin: 0 1rem;
   }
   // ::ng-deep.mat-slider.mat-slider-horizontal .mat-slider-wrapper {
   //   top: 18px;
@@ -245,25 +251,25 @@
 //   }
 
 .play-icon{
-  font-size: 66px;
-  margin-left: -44px;
-  margin-bottom: 40px;
+  font-size: 5.6rem;
+  margin-left: -2.5rem;
+  margin-bottom: 4rem;
   opacity: 0.9;
   color: white;
   backdrop-filter: blur(0.75);
-  text-shadow:2px 4px 6px black; 
+  text-shadow:.2rem .4rem .6rem black; 
   margin-top: 11px;
 }
 .play_icon_rotate{
-  height: 100px;
+  height: 7rem;
   align-items: center;
-  margin: -38px;
-  width: 100px;
-  border-radius: 100px;
-  margin-left: -58px;
+  margin: -3.8rem;
+  width: 7rem;
+  border-radius: 10rem;
+  margin-left: -4.8rem;
 }
 .bold-icon{
-  text-shadow: 1px 1px 2px rgb(14, 3, 5);
+  text-shadow: .1rem .1rem .2rem rgb(14, 3, 5);
 }
 .thumbnail {
   // height: 20px;
@@ -273,20 +279,31 @@
   // margin: 16px;
   // width: 20px;
   // border-radius: 0px;
-  height: 40px;
+  height: 4rem;
   align-items: center;
-  margin: 9px;
-  width: 40px;
-  border-radius: 0px;
+  margin: .9rem;
+  width: 4rem;
+  border-radius: 0rem;
   // margin-top: -61px;
 }
 .thumbnail-img{
-  height: 40px;
+  height: 4rem;
     align-items: center;
-    margin: 9px;
-    width: 40px;
-    border-radius: 0px;
-    margin-top: -70px;
+    margin: .9rem;
+    width: 4rem;
+    border-radius: 0rem;
+    margin-top: -7rem;
+}
+.time-progress-bar{
+  height: 2.8rem;
+  position: relative;
+}
+.time-progress-bar-slider{
+  width: 18.1rem;
+  position: absolute;
+  top: -1.7rem;
+  margin-left: -.3rem;
+  margin-top: .3rem;
 }
 .fvrt{
   -webkit-text-fill-color: red;
@@ -304,7 +321,17 @@
     transform: scale(1);
   }
 }
-
+.song-list-view-box{
+  width: 28rem;
+  border-radius: 2.4rem;
+  position: relative;
+  top: -4rem;
+  margin-left: 1.9rem;
+  max-width: 394px;
+}
+.blank-top{
+  margin-top: 3rem;
+}
 // .expandable {
 //   // background: #fff;
 //   // overflow: hidden;

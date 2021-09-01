@@ -1,9 +1,8 @@
 <div class="row">
   <div class="col-lg-6">
-    <mat-card dynamicHeight style="width: 60vh;border-radius: 25px;z-index: 2;">
+    <mat-card dynamicHeight class="main-box">
       <div class="row">
-        <div class="col-4" style="margin-left: -13px;
-        margin-top: 14px;">
+        <div class="col-4 play-button-box">
           <button class="example-small-box" (mouseenter)="playPauseBtnShw()" 
           (mouseleave)="playPauseBtnHide()"
            mat-raised-button 
@@ -21,14 +20,10 @@
         <div class="col-8">
           <div class="row">
           <div class="col-10">
-            <marquee class="m-0 scroll-left" style="width: 223px;" behavior="scroll" direction="left">{{currentSongPlaying.audio_name}}</marquee>
+            <marquee class="m-0 scroll-left" class="song_name" behavior="scroll" direction="left">{{currentSongPlaying.audio_name}}</marquee>
           </div>
           <div class="col-2">
-            <button mat-icon-button class="btn_palette" style="margin-top: -10px;
-            
-            margin-left: 5px;
-            
-            color: #6c757d;"
+            <button mat-icon-button class="btn_palette show-list-btn"
             (click)="showlist()"
             >
               <mat-icon  fontSet="material-icons-outlined">playlist_play</mat-icon>
@@ -39,17 +34,13 @@
             <h4 class="m-0 artist_name" style=" opacity:0.8">{{currentSongPlaying.artist}}</h4>
           </div>
           <br>
-          <div style="height: 28px;">
+          <div class="time-progress-bar">
             <audio #audioPlayer (timeupdate)="songPos = playSong.currentTime/playSong.duration * 100" (ended)="playNext(currentSongPlaying)"></audio>
             <mat-progress-bar (mouseenter)="slide = true; sliderPos = songPos"
              *ngIf="!slide" color="primary" mode="determinate" [value]="songPos" >
             </mat-progress-bar>
             <!-- *ngIf="slide" -->
-              <mat-slider style="width: 104%;
-              position: relative;
-              top: -25px;
-              margin-left: -3px;
-              margin-top: 3px;"
+              <mat-slider class="time-progress-bar-slider"
               *ngIf="slide"
               thumbLabel
               [displayWith]="currentTime"
@@ -150,29 +141,24 @@
     </mat-card>
   </div>
   
-  <mat-card dynamicHeight  style="width: 59vh;
-  border-radius: 24px;
-  position: relative;
-  top: -50px;
-  margin-left: 19px;
-  "
+  <mat-card dynamicHeight class="song-list-view-box"
   *ngIf="visible">
   <perfect-scrollbar style="max-height: 290px;">
-  <div [@slideInOut] style="margin-top: 30px;">
+  <div [@slideInOut] class="blank-top">
     <div *ngFor="let audio of audioData">
    <div class="row">
-    <div class="col-lg-3">
+    <div class="col-lg-3 col-3">
       <button class="thumbnail" (click)="playSingle(audioData.indexOf(audio),{pos:'list'})" mat-icon-button>
       </button>
       <img src="{{audio.albumArt}}" class="thumbnail-img">
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-3 col-3">
       <h4>{{audio.audio_name}}</h4>
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-3 col-3">
       <h4>{{audio.artist}}</h4>
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-3 col-3">
      <button mat-icon-button [ngClass]="{'fvrt':favoritedSongsList.includes(audio.audio)}" (click)="favorited(audio)"><mat-icon>{{favoritedSongsList.includes(audio.audio)?'favorite':'favorite_border'}}</mat-icon></button>
     </div>
    </div>
